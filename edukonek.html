@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MMDC || EduKonek</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <header>
+        <div class="header-section">
+
+            <img 
+                src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" 
+                alt="MMDC Logo"
+            >
+
+            <h1>|| EduKonek</h1>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="login-section">
+
+            <form id="loginForm">
+
+                <label for="studentIdentifier">Student Number or Email:</label>
+                <input 
+                    type="text" 
+                    id="studentIdentifier" 
+                    name="studentIdentifier" 
+                    placeholder="Enter student number or email"
+                    required
+                >
+
+                <label for="password">Password:</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required
+                >
+
+                <button type="submit">Sign In</button>
+                <p id="loginMessage" class="login-message" role="alert" aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+
+        <section class="lobby hidden">
+
+            <nav class="lobby-navigation" aria-label="Main navigation">
+                <button type="button" id="homeButton">HOME</button>
+                <button type="button" id="bookingButton" aria-controls="bookingSection">BOOKING</button>
+                <button type="button" id="signOutButton">SIGN OUT</button>
+            </nav>
+
+            <h2 id="welcomeMessage">Welcome!</h2>
+
+        </section>
+
+
+        <section class="student-dashboard hidden">
+
+            <div id="sessionsSection">
+
+            <h2>Upcoming Mentoring Sessions</h2>
+
+            <div class="schedule-layout">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>COURSE</th>
+                        <th>MENTOR</th>
+                        <th>DATE AND TIME</th>
+                        <th>PURPOSE</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Placeholder</td>
+                        <td>Mr. Instructor</td>
+                        <td>9:00 AM</td>
+                        <td>Mentoring session</td>
+                        <td>Pending</td>
+                    </tr>
+
+                    <tr>
+                        <td>Placeholder</td>
+                        <td>Mr. Instructor</td>
+                        <td>1:00 PM</td>
+                        <td>Mentoring session</td>
+                        <td>Pending</td>
+                    </tr>
+
+                    <tr>
+                        <td>Placeholder</td>
+                        <td>Mr. Instructor</td>
+                        <td>3:30 PM</td>
+                        <td>Mentoring session</td>
+                        <td>Pending</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <aside class="schedule-actions" aria-label="Meeting links">
+                <span aria-hidden="true"></span>
+                <div class="schedule-action-row">
+                    <a href="https://meet.google.com/" aria-label="Join Google Meet for 9:00 AM session">
+                        <img class="meet-icon" src="https://commons.wikimedia.org/wiki/Special:FilePath/Google_Meet_icon_%282020%29.svg" alt="Google Meet">
+                    </a>
+                    <button type="button" class="cancel-button">Cancel</button>
+                </div>
+                <div class="schedule-action-row">
+                    <a href="https://meet.google.com/" aria-label="Join Google Meet for 1:00 PM session">
+                        <img class="meet-icon" src="https://commons.wikimedia.org/wiki/Special:FilePath/Google_Meet_icon_%282020%29.svg" alt="Google Meet">
+                    </a>
+                    <button type="button" class="cancel-button">Cancel</button>
+                </div>
+                <div class="schedule-action-row">
+                    <a href="https://meet.google.com/" aria-label="Join Google Meet for 3:30 PM session">
+                        <img class="meet-icon" src="https://commons.wikimedia.org/wiki/Special:FilePath/Google_Meet_icon_%282020%29.svg" alt="Google Meet">
+                    </a>
+                    <button type="button" class="cancel-button">Cancel</button>
+                </div>
+            </aside>
+
+            </div>
+
+            </div>
+
+
+            <section id="bookingSection" class="booking-section hidden">
+
+            <h2>Book a Mentoring Session</h2>
+
+            <form id="bookingForm">
+
+                <label for="course">Select Course:</label>
+
+                <select 
+                    id="course" 
+                    name="course" 
+                    required
+                >
+                    <option value="">--Select a course--</option>
+                </select>
+
+                <p id="courseMessage" class="login-message" role="status" aria-live="polite"></p>
+
+
+                <label for="instructor">Instructor:</label>
+
+                <select 
+                    id="instructor" 
+                    name="instructor" 
+                    required
+                >
+                    <option value="">--Select an instructor--</option>
+                </select>
+                <p id="instructorMessage" class="login-message" role="status" aria-live="polite"></p>
+
+
+                <label for="date">Select Date:</label>
+
+                <input 
+                    type="date" 
+                    id="date" 
+                    name="date" 
+                    required
+                >
+
+
+                <label for="time">Select Time:</label>
+
+                <input 
+                    type="time" 
+                    id="time" 
+                    name="time" 
+                    required
+                >
+
+
+                <label for="concern">Summary of Concern:</label>
+
+                <textarea 
+                    id="concern" 
+                    name="concern" 
+                    rows="4"
+                    placeholder="Write a brief summary of your concern..."
+                ></textarea>
+
+
+                <button type="submit">Submit</button>
+
+            </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const bookingForm = document.getElementById('bookingForm');
+        const homeButton = document.getElementById('homeButton');
+        const bookingButton = document.getElementById('bookingButton');
+        const signOutButton = document.getElementById('signOutButton');
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        const sessionsSection = document.getElementById('sessionsSection');
+        const bookingSection = document.getElementById('bookingSection');
+        const loginMessage = document.getElementById('loginMessage');
+        const courseSelect = document.getElementById('course');
+        const courseMessage = document.getElementById('courseMessage');
+        const instructorSelect = document.getElementById('instructor');
+        const instructorMessage = document.getElementById('instructorMessage');
+        const hiddenSections = document.querySelectorAll('.lobby, .student-dashboard');
+        let students = [];
+        let courses = [];
+        let mentors = [];
+
+        function parseCsvRow(line) {
+            const values = [];
+            let value = '';
+            let quoted = false;
+
+            for (let index = 0; index < line.length; index += 1) {
+                const character = line[index];
+
+                if (character === '"') {
+                    if (quoted && line[index + 1] === '"') {
+                        value += '"';
+                        index += 1;
+                    } else {
+                        quoted = !quoted;
+                    }
+                } else if (character === ',' && !quoted) {
+                    values.push(value.trim());
+                    value = '';
+                } else {
+                    value += character;
+                }
+            }
+
+            values.push(value.trim());
+            return values;
+        }
+
+        function normalizeIdentifier(value) {
+            return (value || '').replace(/\s+/g, '').toLowerCase();
+        }
+
+        async function loadStudents() {
+            const response = await fetch('students_list.csv');
+            if (!response.ok) {
+                throw new Error(`Student CSV request failed: ${response.status}`);
+            }
+
+            const lines = (await response.text()).trim().split(/\r?\n/);
+            const headers = parseCsvRow(lines.shift()).map(header => header.toLowerCase());
+
+            students = lines.filter(line => line.trim()).map(line => {
+                const values = parseCsvRow(line);
+                return {
+                    studentNumber: values[headers.indexOf('student number')] || '',
+                    firstName: values[headers.indexOf('first name')] || '',
+                    lastName: values[headers.indexOf('last name')] || '',
+                    email: (values[headers.indexOf('email')] || '').toLowerCase()
+                };
+            }).filter(student => student.email);
+        }
+
+        function setCourses(csvText) {
+            const rows = csvText.trim().split(/\r?\n/).map(parseCsvRow);
+            const courseNames = rows.shift().filter(Boolean);
+
+            courses = courseNames.map((name, columnIndex) => ({
+                name,
+                studentNumbers: rows.map(row => row[columnIndex]).filter(Boolean)
+            }));
+        }
+
+        async function loadCourses() {
+            const response = await fetch('courses_list.csv');
+            if (!response.ok) {
+                throw new Error('Course CSV was not found.');
+            }
+
+            setCourses(await response.text());
+        }
+
+        function setMentors(csvText) {
+            const rows = csvText.trim().split(/\r?\n/).map(parseCsvRow);
+            const courseNames = rows.shift().filter(Boolean);
+
+            mentors = courseNames.map((name, columnIndex) => ({
+                name,
+                instructors: rows.map(row => row[columnIndex]).filter(Boolean)
+            }));
+        }
+
+        async function loadMentors() {
+            const response = await fetch('mentors_list.csv');
+            if (!response.ok) {
+                throw new Error('Mentor CSV was not found.');
+            }
+
+            setMentors(await response.text());
+        }
+
+        function showCourseMentors(courseName) {
+            instructorSelect.replaceChildren(new Option('--Select an instructor--', ''));
+
+            const courseMentors = mentors.find(course => course.name === courseName);
+            const instructors = courseMentors ? courseMentors.instructors : [];
+
+            instructors.forEach(instructor => {
+                instructorSelect.add(new Option(instructor, instructor));
+            });
+
+            instructorMessage.textContent = instructors.length
+                ? `${instructors.length} instructor${instructors.length === 1 ? '' : 's'} available.`
+                : 'No instructors were found for this course.';
+        }
+
+        function showStudentCourses(studentNumber) {
+            courseSelect.replaceChildren(new Option('--Select a course--', ''));
+
+            const availableCourses = courses.filter(course =>
+                course.studentNumbers.includes(studentNumber)
+            );
+
+            availableCourses.forEach(course => {
+                courseSelect.add(new Option(course.name, course.name));
+            });
+
+            courseMessage.textContent = availableCourses.length
+                ? `${availableCourses.length} course${availableCourses.length === 1 ? '' : 's'} available.`
+                : 'No courses were found for this student number.';
+        }
+
+        loadStudents().catch(() => {
+            loginMessage.textContent = 'Student email records could not be loaded.';
+        });
+
+        loadCourses().catch(() => {
+            courseMessage.textContent = 'Course records could not be loaded.';
+        });
+
+        loadMentors().catch(() => {
+            instructorMessage.textContent = 'Instructor records could not be loaded.';
+        });
+
+        courseSelect.addEventListener('change', function () {
+            if (courseSelect.value && mentors.length) {
+                showCourseMentors(courseSelect.value);
+            } else {
+                instructorSelect.replaceChildren(new Option('--Select an instructor--', ''));
+                instructorMessage.textContent = courseSelect.value
+                    ? 'Instructor records are not available.'
+                    : '';
+            }
+        });
+
+        loginForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+            loginMessage.textContent = '';
+
+            if (!students.length) {
+                loginMessage.textContent = 'Student records are not available.';
+                return;
+            }
+
+            const identifier = normalizeIdentifier(document.getElementById('studentIdentifier').value);
+            const student = students.find(record =>
+                normalizeIdentifier(record.email) === identifier ||
+                normalizeIdentifier(record.studentNumber) === identifier
+            );
+
+            if (!student) {
+                loginMessage.textContent = 'Use a valid student number or working student email from the student list.';
+                return;
+            }
+
+            hiddenSections.forEach(section => {
+                section.style.display = 'block';
+            });
+
+            welcomeMessage.textContent = `Welcome, ${student.firstName} ${student.lastName}!`;
+            if (courses.length) {
+                showStudentCourses(student.studentNumber);
+            } else {
+                courseMessage.textContent = 'Course records are not available.';
+            }
+            document.querySelector('.login-section').style.display = 'none';
+        });
+
+        bookingButton.addEventListener('click', function () {
+            sessionsSection.style.display = 'none';
+            bookingSection.style.display = 'block';
+            welcomeMessage.style.display = 'none';
+        });
+
+        homeButton.addEventListener('click', function () {
+            sessionsSection.style.display = 'block';
+            bookingSection.style.display = 'none';
+            welcomeMessage.style.display = 'block';
+        });
+
+        signOutButton.addEventListener('click', function () {
+            hiddenSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            document.querySelector('.login-section').style.display = 'block';
+            welcomeMessage.textContent = 'Welcome!';
+            loginMessage.textContent = '';
+            courseMessage.textContent = '';
+            instructorMessage.textContent = '';
+            instructorSelect.replaceChildren(new Option('--Select an instructor--', ''));
+            loginForm.reset();
+        });
+
+        bookingForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Session Requested!');
+        });
+    </script>
+
+</body>
+</html>
