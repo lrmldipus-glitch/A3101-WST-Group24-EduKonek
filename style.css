@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #0a205f;
+}
+
+main {
+    padding: 20px;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eef3fa;
+    padding: 15px;
+    text-align: center;
+}
+
+.header-section img {
+    width: auto;
+    height: 250px;
+}
+
+.header-section h1 {
+    font-size: 6rem;
+    margin-left: 20px;
+    color: #0a205f;
+    margin-bottom: 25;
+}
+
+section,
+login-section,
+lobby,
+student-dashboard,
+.welcome-section,
+.student-dashboard {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+section h2,
+login-section h2,
+lobby h2,
+student-dashboard h2,
+.welcome-section h2,
+.student-dashboard h2 {
+    margin-bottom: 12px;
+    color: #0a205f;
+}
+
+.lobby h2 {
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+form label {
+    font-weight: 600;
+    color: #0a205f;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #cdd7e5;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    width: fit-content;
+    background-color: #0a205f;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #143d96;
+}
+
+.login-section form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(500px, calc(100vw - 40px));
+    margin: 0;
+    padding: 32px;
+    background-color: white;
+    border: 1px solid #d2ddeb;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(10, 32, 95, 0.14);
+    transform: translate(-50%, -50%);
+}
+
+.login-section button {
+    align-self: center;
+    min-width: 140px;
+}
+
+#bookingForm {
+    width: min(100%, 500px);
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.lobby {
+    max-width: 1100px;
+}
+
+.student-dashboard {
+    max-width: 1100px;
+}
+
+.lobby-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.lobby-navigation button {
+    padding: 10px 18px;
+    border: 1px solid #0a205f;
+    border-radius: 8px;
+    background-color: #0a205f;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lobby-navigation #signOutButton {
+    margin-left: auto;
+}
+
+.lobby-navigation button:hover {
+    background-color: #143d96;
+}
+
+table {
+    width: 100%;
+    font-size: 1.1rem;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #f3f8ff;
+}
+
+th {
+    background-color: #dfeeff;
+    color: #0a205f;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid #d2d8e0;
+}
+
+.schedule-layout {
+    display: grid;
+    grid-template-columns: minmax(850px, 1fr) 150px;
+    gap: 10px;
+    align-items: stretch;
+    overflow-x: auto;
+}
+
+.meet-icon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.schedule-actions {
+    display: grid;
+    grid-template-rows: 49px repeat(3, minmax(49px, 1fr));
+    align-items: center;
+    justify-items: center;
+    margin-top: 10px;
+}
+
+.schedule-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule-action-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.cancel-button {
+    padding: 6px 9px;
+    border: 1px solid #b52b35;
+    border-radius: 6px;
+    background-color: white;
+    color: #b52b35;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    background-color: #fff0f1;
+}
