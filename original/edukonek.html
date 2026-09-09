@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>MMDC || EduKonek</title>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -30,17 +28,16 @@
 
     <main>
 
-        <!-- Login Section -->
+        <!-- login ssction -->
         <section class="login-section">
 
             <form id="loginForm">
 
-                <label for="email">Student Number or Email:</label>
+                <label for="email">Email:</label>
                 <input 
-                    type="text" 
+                    type="email" 
                     id="email" 
-                    name="email" 
-                    placeholder="Enter student number or email"
+                    name="email"
                     required
                 >
 
@@ -59,36 +56,26 @@
         </section>
 
 
-        <!-- Welcome Section -->
-        <section class="lobby hidden" id="welcome">
-
-            <nav class="lobby-navigation" aria-label="Welcome navigation">
-                <a href="#welcome" id="homeLink">Home</a>
-                <a href="#booking" id="bookingLink">Booking</a>
-                <button type="button" id="signOutButton">Sign Out</button>
-            </nav>
+        <!-- wlcome section -->
+        <section class="lobby hidden">
 
             <h2>Welcome!</h2>
 
         </section>
 
 
-        <!-- Student Dashboard -->
+        <!-- student dshboard -->
         <section class="student-dashboard hidden">
 
-            <div id="sessionsSection">
             <h2>Upcoming Mentoring Sessions</h2>
 
-            <div class="schedule-layout">
             <table>
 
                 <thead>
                     <tr>
                         <th>Course</th>
-                        <th>Mentor</th>
                         <th>Date and Time</th>
-                        <th>Purpose</th>
-                        <th>Status</th>
+                        <th>Instructor</th>
                     </tr>
                 </thead>
 
@@ -96,82 +83,30 @@
 
                     <tr>
                         <td>Placeholder</td>
+                        <td>2026-10-15, 9:00 AM</td>
                         <td>Mr. Instructor</td>
-                        <td>9:00 AM</td>
-                        <td>Mentoring session</td>
-                        <td>Pending</td>
                     </tr>
 
                     <tr>
                         <td>Placeholder</td>
+                        <td>2026-10-15, 1:00 PM</td>
                         <td>Mr. Instructor</td>
-                        <td>1:00 PM</td>
-                        <td>Mentoring session</td>
-                        <td>Pending</td>
                     </tr>
 
                     <tr>
                         <td>Placeholder</td>
+                        <td>2026-10-15, 3:30 PM</td>
                         <td>Mr. Instructor</td>
-                        <td>3:30 PM</td>
-                        <td>Mentoring session</td>
-                        <td>Pending</td>
                     </tr>
 
                 </tbody>
 
             </table>
 
-            <aside class="schedule-actions" aria-label="Meeting links">
-                <span aria-hidden="true"></span>
-                <div class="schedule-action-row">
-                    <a href="https://meet.google.com/" aria-label="Join Google Meet for 9:00 AM session">
-                        <img class="meet-icon" src="https://commons.wikimedia.org/wiki/Special:FilePath/Google_Meet_icon_%282020%29.svg" alt="Google Meet">
-                    </a>
-                    <button type="button" class="cancel-button">Cancel</button>
-                </div>
-                <div class="schedule-action-row">
-                    <a href="https://meet.google.com/" aria-label="Join Google Meet for 1:00 PM session">
-                        <img class="meet-icon" src="https://commons.wikimedia.org/wiki/Special:FilePath/Google_Meet_icon_%282020%29.svg" alt="Google Meet">
-                    </a>
-                    <button type="button" class="cancel-button">Cancel</button>
-                </div>
-                <div class="schedule-action-row">
-                    <a href="https://meet.google.com/" aria-label="Join Google Meet for 3:30 PM session">
-                        <img class="meet-icon" src="https://commons.wikimedia.org/wiki/Special:FilePath/Google_Meet_icon_%282020%29.svg" alt="Google Meet">
-                    </a>
-                    <button type="button" class="cancel-button">Cancel</button>
-                </div>
-            </aside>
-            </div>
-            </div>
-
-            <section class="cancellation-section hidden" id="cancellationSection">
-
-            <h2>Cancel Mentoring Session</h2>
-
-            <form id="cancellationForm">
-
-                <label for="cancellationReason">Why are you cancelling?</label>
-                <textarea
-                    id="cancellationReason"
-                    name="cancellationReason"
-                    rows="4"
-                    placeholder="Explain why you are cancelling this session..."
-                    required
-                ></textarea>
-
-                <button type="submit">Submit Cancellation</button>
-
-            </form>
-
-            </section>
-
-            <section class="booking-section hidden" id="booking">
 
             <h2>Book a Mentoring Session</h2>
 
-            <form id="bookingForm">
+            <form>
 
                 <label for="course">Select Course:</label>
 
@@ -255,86 +190,22 @@
 
             </form>
 
-            </section>
-
         </section>
 
     </main>
 
     <script>
         const loginForm = document.getElementById('loginForm');
-        const visibleAfterLogin = document.querySelectorAll('.lobby, .student-dashboard');
-        const bookingSection = document.getElementById('booking');
-        const homeLink = document.getElementById('homeLink');
-        const bookingLink = document.getElementById('bookingLink');
-        const signOutButton = document.getElementById('signOutButton');
-        const sessionsSection = document.getElementById('sessionsSection');
-        const bookingForm = document.getElementById('bookingForm');
-        const cancellationSection = document.getElementById('cancellationSection');
-        const cancellationForm = document.getElementById('cancellationForm');
-        const cancelButtons = document.querySelectorAll('.cancel-button');
-        const welcomeMessage = document.querySelector('.lobby h2');
+        const hiddenSections = document.querySelectorAll('.hidden');
 
         loginForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            visibleAfterLogin.forEach(section => {
+            hiddenSections.forEach(section => {
                 section.style.display = 'block';
             });
 
-            welcomeMessage.style.display = 'block';
             document.querySelector('.login-section').style.display = 'none';
-        });
-
-        homeLink.addEventListener('click', function (event) {
-            event.preventDefault();
-            sessionsSection.style.display = 'block';
-            bookingSection.style.display = 'none';
-            cancellationSection.style.display = 'none';
-            welcomeMessage.style.display = 'block';
-        });
-
-        bookingLink.addEventListener('click', function (event) {
-            event.preventDefault();
-            sessionsSection.style.display = 'none';
-            bookingSection.style.display = 'block';
-            cancellationSection.style.display = 'none';
-            welcomeMessage.style.display = 'none';
-        });
-
-        cancelButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                sessionsSection.style.display = 'none';
-                bookingSection.style.display = 'none';
-                cancellationSection.style.display = 'block';
-                welcomeMessage.style.display = 'none';
-            });
-        });
-
-        signOutButton.addEventListener('click', function () {
-            visibleAfterLogin.forEach(section => {
-                section.style.display = 'none';
-            });
-
-            bookingSection.style.display = 'none';
-            cancellationSection.style.display = 'none';
-            welcomeMessage.style.display = 'none';
-            document.querySelector('.login-section').style.display = 'block';
-            loginForm.reset();
-        });
-
-        bookingForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            alert('Session Requested!');
-        });
-
-        cancellationForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            alert('Cancellation Submitted!');
-            cancellationForm.reset();
-            cancellationSection.style.display = 'none';
-            sessionsSection.style.display = 'block';
-            welcomeMessage.style.display = 'block';
         });
     </script>
 
