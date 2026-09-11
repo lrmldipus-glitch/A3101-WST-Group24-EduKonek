@@ -259,6 +259,185 @@
                 </table>
             
         </section>
+
+                    <!-- Log in Page -->
+
+                <section>
+           <div class="header-container">
+        <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="Mapua Malayan Digital College" class="logo">
+        
+        <div class="divider">||</div>
+    
+        <h1 class="header-title">
+            <span class="edu-text">Edu</span>Konek
+        </h1>
+    </div>
+    </section>
+    <section>
+        <div class="input">
+            <p>Username: <input type="text" id=" user-input" placeholder="Enter Username"></p>
+            <p>Password: <input type="password" id=" pass-input" placeholder="Enter Password"></p>
+    
+        <div class="button-grp">
+            <button type="submit" class="btn sign-in" onclick="checkCredentials">Sign in</button>
+            <button type="button" class="btn sign-up" onclick="window.location.href = 'Signup.html'">Sign Up</button>
+        </div>
+    </section>
+
+                <!-- Dashboard Page -->
+
+            <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Dashboard.css">
+    <title>EduKonek</title>
+</head>
+<body>
+
+    <div class="header-container">
+        <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="Mapua Malayan Digital College" class="logo">
+        <div class="divider">||</div>
+        <h1 class="header-title">
+            <span class="edu-text">Edu</span>Konek
+        </h1>
+    </div>
+
+    <nav class="navbar">
+        <a href="Dashboard.html" class="active">Dashboard</a>
+        <a href="MyBookings.html">My Bookings</a>
+        <a href="MyCourses.html">My Courses</a>
+        <a href="AvailableSchedules.html">Available Schedules</a>
+        <a href="AppointmentSummary.html">Appointment Summary</a>
+
+        <div class="nav-right">
+            <div class="user-badge">
+                <div class="user-icon">U</div>
+                User
+            </div>
+            <a href="Login.html">Log out</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h2>Welcome Back User !</h2>
+       <p>Here is what is coming up this week.</p>
+       <br>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <p>Upcoming sessions</p>
+                <p class="stat-value">3</p>
+            </div>
+            <div class="stat-card">
+                <p>Enrolled courses</p>
+                <p class="stat-value">5</p>
+            </div>
+            <div class="stat-card alert">
+                <p>Pending requests</p>
+                <p class="stat-value">1</p>
+            </div>
+        </div><br>
+
+
+         <h2>Upcoming Mentoring Sessions</h2>
+         <br>
+                    <table class="sessions-table">
+                         <tr>
+                        <th>Student</th>
+                        <th>Course</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Purpose</th>
+                        <th>Status</th>
+                    </tr>
+        
+                    <tr>
+                        <td>Juan Cruz</td>
+                        <td>Computer Programming</td>
+                        <td>September 1, 2026</td>
+                        <td>9:00 AM - 9:15 AM</td>
+                        <td>Draft Feedback</td>
+                        <td>Confirmed</td>
+                    </tr> 
+        
+                    <tr>
+                        <td>Ana Reyes</td>
+                        <td>Computer Programming</td>
+                        <td>September 1, 2026</td>
+                        <td>1:00 PM - 1:15 PM</td>
+                        <td>Homework 2 Assistance</td>
+                        <td>Confirmed</td>
+                    </tr> 
+
+                    <tr>
+                        <td>Miguel Torres</td>
+                        <td>Computer Programming</td>
+                        <td>September 2, 2026</td>
+                        <td>9:00 AM - 9:15 AM</td>
+                        <td>Project Walkthrough</td>
+                        <td>Cancelled</td>
+                    </tr> 
+        </table>
+        <br>
+
+        <h2>Quick Actions</h2>
+            <div class="quick-actions">
+                <button class="btn-primary">Book a session</button>
+                <button class="btn-secondary">View schedule</button>
+            </div>  
+        
+        </form>
+    </div>
+
+</body>
+
+
+        <!-- Sign up Page -->
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Signup.css">
+    <title>EduKonek</title>
+</head>
+<body>
+
+    <div class="header-container">
+        <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="Mapua Malayan Digital College" class="logo">
+        <div class="divider">||</div>
+        <h1 class="header-title">
+            <span class="edu-text">Edu</span>Konek
+        </h1>
+    </div>
+
+  <section>
+    <div class="form-container">
+        <p>First Name: <input type="text" placeholder="Enter text"></p>
+        <p>Password: <input type="password" placeholder="Enter password"></p>
+        <p>Email Address: <input type="email" placeholder="Enter email"></p>
+        <p>Phone Number: <input type="tel" placeholder="Enter phone number"></p>
+        <p>Student ID: <input type="text" placeholder="Enter Student number"></p>
+        
+        <p> 
+            Gender:
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+        </p>
+
+        <div class="button-grp">
+            <button type="submit" class="btn sign-in">Register Account</button>
+            <button type="button" class="btn sign-up" onclick="window.location.href='Login.html'">Back to Login</button>
+        </div>
+    </div>
+</section>
+ 
+</body>
+</html>
+
+
+        
     </main>
 
     <script>
