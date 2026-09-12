@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #0a205f;
+}
+
+main {
+    padding: 20px;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eef3fa;
+    padding: 15px;
+    text-align: center;
+}
+
+.header-section img,
+.logo {
+    width: auto;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+}
+
+.header-section h1 {
+    font-size: 6rem;
+    margin-left: 20px;
+    color: #0a205f;
+    margin-bottom: 25;
+}
+
+section,
+login-section,
+lobby,
+student-dashboard,
+.welcome-section,
+.student-dashboard {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+section h2,
+login-section h2,
+lobby h2,
+student-dashboard h2,
+.welcome-section h2,
+.student-dashboard h2 {
+    margin-bottom: 12px;
+    color: #0a205f;
+}
+
+.lobby h2 {
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+form label {
+    font-weight: 600;
+    color: #0a205f;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #cdd7e5;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button,
+form button,
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    width: fit-content;
+    min-width: 140px;
+    padding: 10px 18px;
+    background-color: #0a205f;
+    color: white;
+    font-weight: 600;
+    border: 1px solid #0a205f;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover,
+form button:hover,
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: #143d96;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.login-section form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(500px, calc(100vw - 40px));
+    margin: 0;
+    padding: 32px;
+    background-color: white;
+    border: 1px solid #d2ddeb;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(10, 32, 95, 0.14);
+    transform: translate(-50%, -50%);
+}
+
+.login-section button {
+    align-self: center;
+    min-width: 140px;
+}
+
+#bookingForm {
+    width: min(100%, 500px);
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.lobby {
+    max-width: 1100px;
+}
+
+.student-dashboard {
+    max-width: 1100px;
+}
+
+table {
+    width: 100%;
+    font-size: 1.1rem;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #f3f8ff;
+}
+
+th {
+    background-color: #dfeeff;
+    color: #0a205f;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid #d2d8e0;
+}
