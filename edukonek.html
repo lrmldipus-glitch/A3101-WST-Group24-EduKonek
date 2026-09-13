@@ -176,96 +176,65 @@
                 </div>
         </section>
 
-        <!-- Karina Peña -->
-        <!-- Booking -->
-        <h2>Book a Mentoring Session</h2>
-
-            <form>
-
-                <label for="course">Select Course:</label>
-
-                <select 
-                    id="course" 
-                    name="course" 
-                    required
-                >
-                    <option value="">--Select a course--</option>
-
-                    <option value="MO-IT104">
-                        MO-IT104 - Computer Networks
-                    </option>
-
-                    <option value="MO-IT106">
-                        MO-IT106 - Data Analytics Fundamentals
-                    </option>
-
-                    <option value="MO-IT161">
-                        MO-IT161 - Web Systems and Technology
-                    </option>
-
-                </select>
-
-
-                <label for="instructor">Instructor:</label>
-
-                <select 
-                    id="instructor" 
-                    name="instructor" 
-                    required
-                >
-                    <option value="">--Select an instructor--</option>
-
-                    <option value="instructor1">
-                        Mr. Instructor 1
-                    </option>
-
-                    <option value="instructor2">
-                        Mr. Instructor 2
-                    </option>
-
-                    <option value="instructor3">
-                        Mr. Instructor 3
-                    </option>
-
-                </select>
-
-
-                <label for="date">Select Date:</label>
-
-                <input 
-                    type="date" 
-                    id="date" 
-                    name="date" 
-                    required
-                >
-
-
-                <label for="time">Select Time:</label>
-
-                <input 
-                    type="time" 
-                    id="time" 
-                    name="time" 
-                    required
-                >
-
-
-                <label for="concern">Summary of Concern:</label>
-
-                <textarea 
-                    id="concern" 
-                    name="concern" 
-                    rows="4"
-                    placeholder="Write a brief summary of your concern..."
-                ></textarea>
-
-
-                <button type="submit">Submit</button>
-
-            </form>
-
+    <!-- Jabez Anthony -->
+        <!-- My Bookings -->
+        <section>
+            <h2>My Bookings</h2>
+            <p>View and manage your confirmed or pending mentoring sessions.</p>
+            <table class="sessions-table">
+                <tr>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Instructor</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Computer Programming</td>
+                    <td>September 1, 2026</td>
+                    <td>9:00 AM - 9:15 AM</td>
+                    <td>Mr. Instructor</td>
+                    <td>Confirmed</td>
+                </tr>
+                <tr>
+                    <td>Computer Programming</td>
+                    <td>September 2, 2026</td>
+                    <td>1:00 PM - 1:15 PM</td>
+                    <td>Mr. Instructor</td>
+                    <td>Pending</td>
+                </tr>
+            </table>
         </section>
-    
+
+        <!-- Available Schedules -->
+        <section>
+            <h2>Available Schedules</h2>
+            <p>Book a new mentoring session with your instructors.</p>
+            <form>
+                <label for="select-course">Select Course:</label>
+                <select id="select-course" name="course" required>
+                    <option value="">--Select a course--</option>
+                    <option value="prog1">Computer Programming</option>
+                </select>
+
+                <label for="select-instructor">Instructor:</label>
+                <select id="select-instructor" name="instructor" required>
+                    <option value="">--Select an instructor--</option>
+                    <option value="inst1">Mr. Instructor</option>
+                </select>
+
+                <label for="select-date">Select Date:</label>
+                <input type="date" id="select-date" name="date" required>
+
+                <label for="select-time">Select Time:</label>
+                <input type="time" id="select-time" name="time" required>
+
+                <label for="summary-concern">Summary of Concern:</label>
+                <textarea id="summary-concern" name="concern" rows="4" placeholder="Write a brief summary of your concern..."></textarea>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
         
         <!-- Maria Dipus -->
         <!-- Teacher's Appointment Summary -->
