@@ -163,3 +163,19 @@ td {
     text-align: left;
     border: 1px solid #d2d8e0;
 }
+/* --- Jabez Anthony: My Bookings & Available Schedules Section Styling --- */
+
+/* Sets the full width and bottom margin for the sessions table */
+.sessions-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Custom background, padding, and border styling for the available schedules form */
+section form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #d2d8e0;
+    max-width: 100%;
+}
