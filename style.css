@@ -37,30 +37,16 @@ main {
     margin-bottom: 25;
 }
 
-section,
-login-section,
-lobby,
-student-dashboard,
-.welcome-section,
-.student-dashboard {
+section {
     display: block;
     width: 100%;
     max-width: 700px;
     margin: 20px auto;
 }
 
-section h2,
-login-section h2,
-lobby h2,
-student-dashboard h2,
-.welcome-section h2,
-.student-dashboard h2 {
+section h2 {
     margin-bottom: 12px;
     color: #0a205f;
-}
-
-.lobby h2 {
-    font-size: 3rem;
 }
 
 form {
@@ -124,46 +110,6 @@ form button:hover,
     margin-top: 10px;
 }
 
-.login-section form {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.login-section {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: min(500px, calc(100vw - 40px));
-    margin: 0;
-    padding: 32px;
-    background-color: white;
-    border: 1px solid #d2ddeb;
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(10, 32, 95, 0.14);
-    transform: translate(-50%, -50%);
-}
-
-.login-section button {
-    align-self: center;
-    min-width: 140px;
-}
-
-#bookingForm {
-    width: min(100%, 500px);
-    margin: 20px auto;
-}
-
-.hidden {
-    display: none;
-}
-
-.lobby {
-    max-width: 1100px;
-}
-
-.student-dashboard {
-    max-width: 1100px;
-}
 
 .course-container {
     display: flex;
