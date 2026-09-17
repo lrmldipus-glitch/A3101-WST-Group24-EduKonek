@@ -165,17 +165,48 @@ td {
 }
 /* --- Jabez Anthony: My Bookings & Available Schedules Section Styling --- */
 
-/* Sets the full width and bottom margin for the sessions table */
-.sessions-table {
-    width: 100%;
-    margin-bottom: 20px;
+.schedule-container {
+    border: 1px solid #d2d8e0;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 15px;
 }
 
-/* Custom background, padding, and border styling for the available schedules form */
-section form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #d2d8e0;
-    max-width: 100%;
+.schedule-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.schedule-row:last-child {
+    border-bottom: none;
+}
+
+.schedule-row.booked {
+    color: #888;
+}
+
+.schedule-row.available {
+    color: #0a205f;
+    font-weight: bold;
+}
+
+.schedule-row.active-slot {
+    border: 1px solid #0a205f;
+    border-radius: 4px;
+    background-color: #f8fafe;
+}
+
+.mentor-input {
+    background-color: #eef3fa;
+    color: #555;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }
