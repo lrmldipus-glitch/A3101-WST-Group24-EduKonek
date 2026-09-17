@@ -9,8 +9,9 @@ body {
     color: #0a205f;
 }
 
-main {
-    padding: 20px;
+main,
+.content {
+    padding: 0 24px 24px;
 }
 
 .header-section {
@@ -36,6 +37,76 @@ main {
     color: #0a205f;
     margin-bottom: 25;
 }
+
+/* --- NAVBAR changes from here --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #0a205f;
+    padding: 0 24px;
+    box-shadow: 0 2px 8px rgba(10, 32, 95, 0.15);
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 16px 14px;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: #143d96;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.nav-right a[href="Login.html"] {
+    background-color: #d93025;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.nav-right a[href="Login.html"]:hover {
+    background-color: #b3261e;
+}
+
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.user-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #0a205f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+/* --- to here NAVBAR changes --- */
 
 section {
     display: block;
