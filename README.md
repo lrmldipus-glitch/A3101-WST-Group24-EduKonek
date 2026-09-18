@@ -1,4 +1,4 @@
-Project Team
+# Project Team
 
 MO-IT161 Web Systems and Application
 
@@ -10,13 +10,13 @@ Jermiael Allen Jade Llanera,
 Karina Fae Peña,
 Maria Leorrie Dipus
 
-EduKonek
+# EduKonek
 A Browser-Based Student-Teacher Mentoring Booking System
 EduKonek is a browser-based student-teacher mentoring booking system designed to improve the traditional spreadsheet-based process of scheduling mentoring sessions.
 The system provides a centralized platform where students can view available mentoring schedules, select a teacher or mentor, book a session, and receive booking confirmation. Teachers and mentors can manage their available schedules, view student bookings, and monitor their scheduled mentoring appointments.
 By replacing the manual spreadsheet-based booking process with a centralized web application, EduKonek aims to make mentoring session scheduling more organized, accessible, and efficient for both students and teachers.
 
-Project Overview
+# Project Overview
 
 Traditional spreadsheet-based booking can make it difficult for students and teachers to efficiently manage mentoring schedules. EduKonek addresses this by providing a dedicated platform for managing available schedules and mentoring appointments in one place.
 
@@ -28,7 +28,7 @@ Teachers/Mentors – Teachers or mentors who provide mentoring sessions and mana
 
 
 
-The project development plan includes:
+# The project development plan includes:
 
 HTML – Webpage structure
 
@@ -38,7 +38,7 @@ JavaScript – Frontend interactions, validation, booking selections, and dynami
 
 Node.js – Backend development
 
-Project Status
+# Project Status
 🚧 In Development
 The project follows a 12-week development plan covering frontend development, backend development, database integration, quality assurance, documentation, and final project presentation.
 
