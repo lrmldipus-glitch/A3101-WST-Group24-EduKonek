@@ -281,3 +281,25 @@ td {
     gap: 10px;
     margin-top: 15px;
 }
+
+/* added my course description styling */ 
+/* Course Description */
+.course-description {
+    margin-top: 20px;
+    padding: 7px;
+    width: 800px;
+
+    background-color: #dfeeff;
+    color: #0a205f;
+
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
+.course-description h4 {
+    margin-bottom: 5px;
+}
+
+.course-description p {
+    margin-top: 0;
+}
