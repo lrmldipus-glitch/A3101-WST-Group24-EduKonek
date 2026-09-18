@@ -28,7 +28,7 @@ Teachers/Mentors – Teachers or mentors who provide mentoring sessions and mana
 
 
 
-# The project development plan includes:
+# The Project Development Plan Includes:
 
 HTML – Webpage structure
 
