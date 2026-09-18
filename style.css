@@ -181,7 +181,7 @@ form button:hover,
     margin-top: 10px;
 }
 
-
+/* My Courses */
 .course-container {
     display: flex;
     flex-direction: row;
@@ -204,6 +204,13 @@ form button:hover,
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* made adjustments to each course */
+#WST-course:hover,
+#LWR-course:hover,
+#CP-course:hover{
+    color: gray
 }
 
 .course h4 {
