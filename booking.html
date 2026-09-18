@@ -41,33 +41,56 @@
         </nav>
 
 <!-- Book a Session -->
-        <section>
-            <h2>Available Schedules</h2>
-            <p>Book a new mentoring session with your instructors.</p>
-            <form>
-                <label for="select-course">Select Course:</label>
-                <select id="select-course" name="course" required>
-                    <option value="">--Select a course--</option>
-                    <option value="prog1">Computer Programming</option>
-                </select>
+        <section class="booking-section">
+                <h2>Available Schedules</h2>
+                <p>Book a new mentoring session with your instructors.</p>
+            
+                <form class="booking-form">      
+                    <!-- Select Course Dropdown -->
+                    <label for="course-select">Select Course</label>
+                    <select id="course-select" name="course" onchange="updateMentorName()">
+                        <option value="Computer Programming">Computer Programming</option>
+                        <option value="Web Systems and Technology">Web Systems and Technology</option>
+                        <option value="Life and Works of Rizal">Life and Works of Rizal</option>
+                    </select>
 
-                <label for="select-instructor">Instructor:</label>
-                <select id="select-instructor" name="instructor" required>
-                    <option value="">--Select an instructor--</option>
-                    <option value="inst1">Mr. Instructor</option>
-                </select>
+                    <!-- Assigned Mentor -->
+                    <label for="mentor-field">Mentor</label>
+                    <input type="text" id="mentor-field" class="mentor-input" value="Ms. Susan Abella" readonly>
 
-                <label for="select-date">Select Date:</label>
-                <input type="date" id="select-date" name="date" required>
+                    <!-- Date Picker -->
+                    <label for="booking-date">Date</label>
+                    <input type="date" id="booking-date" value="2026-09-01">
 
-                <label for="select-time">Select Time:</label>
-                <input type="time" id="select-time" name="time" required>
+                    <!-- Available Schedules Slots -->
+                    <label>Select Time Slot</label>
+                    <div class="schedule-container">
+                    <!-- Booked Slot -->
+                    <div class="schedule-row booked">
+                        <label><input type="checkbox" disabled> 9:00 AM - 9:15 AM</label>
+                        <span class="status-text">Booked</span>
+                    </div>
+                    <!-- Available / Selectable Slot -->
+                    <div class="schedule-row available active-slot">
+                        <label><input type="checkbox"> 1:30 PM - 1:45 PM</label>
+                        <span class="status-text">Available</span>
+                    </div>
+                    <!-- Booked Slot -->
+                    <div class="schedule-row booked">
+                        <label><input type="checkbox" disabled> 8:00 PM - 8:15 PM</label>
+                        <span class="status-text">Booked</span>
+                    </div>
+                
+                     <!-- Summary of Concern -->
+                    <label for="concern-summary">Summary of Concern</label>
+                    <textarea id="concern-summary" placeholder="Write a brief summary of your concern...."></textarea>
 
-                <label for="summary-concern">Summary of Concern:</label>
-                <textarea id="summary-concern" name="concern" rows="4" placeholder="Write a brief summary of your concern..."></textarea>
-
-                <button type="submit">Confirm Booking</button>
-            </form>
+                    <!-- Action Buttons -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Save as Draft</button>
+                        <button type="submit" class="btn-primary">Confirm Booking</button>
+                    </div>
+                </form>
         </section>
 </body> 
 </html>
