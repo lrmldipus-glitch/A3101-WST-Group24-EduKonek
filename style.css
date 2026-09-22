@@ -108,12 +108,15 @@ main,
 }
 /* --- to here NAVBAR changes --- */
 
+/* --- from here BODY WIDTH changes --- */
 section {
     display: block;
     width: 100%;
     max-width: 700px;
     margin: 20px auto;
+    max-width: 1500px;
 }
+/* --- to here BODY WIDTH changes --- */
 
 section h2 {
     margin-bottom: 12px;
@@ -245,15 +248,16 @@ form button:hover,
 /* My Courses */
 .course-container {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .course {
     border: 1px solid lightblue;
     border-radius: 12px;
     height: 110px;
-    width: 200px;
+    width: 400px;
     font-family: sans-serif;
     text-align: center;
     color: white;
@@ -283,6 +287,7 @@ form button:hover,
     margin: 5px 0 0;
     font-size: 13px;
 }
+
 table {
     width: 100%;
     font-size: 1.1rem;
@@ -355,7 +360,7 @@ td {
 .course-description {
     margin-top: 20px;
     padding: 7px;
-    width: 800px;
+    width: min(800px, 100%);
 
     background-color: #dfeeff;
     color: #0a205f;
