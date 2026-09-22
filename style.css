@@ -61,7 +61,7 @@ main,
 
 .navbar a:hover,
 .navbar a.active {
-    background-color: #143d96;
+    background-color: #d93025;
 }
 
 .nav-right {
@@ -184,12 +184,14 @@ section h2 {
 }
 /* --- to here LOGIN changes --- */
 
+
+/* --- booking-form position changes --- */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 500px;
-    margin: 20px 0;
+    max-width: 700px;
+    margin: 20px auto;
 }
 
 form label {
