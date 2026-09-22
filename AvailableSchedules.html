@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>MMDC || EduKonek - Book a Session</title>
+    <title>MMDC || EduKonek - Available Schedules</title>
 </head>
 
 <body>
+
     <header>
         <div class="header-section">
             <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="MMDC Logo">
@@ -16,27 +17,31 @@
         </div>
     </header>
 
-    <!-- Navbar: Dashboard and Book a Session are properly separated -->
-    <nav class="navbar">
-        <a href="student.html">Dashboard</a>
-        <a href="booking.html" class="active">Book a Session</a>
-
-        <div class="nav-right">
-            <div class="user-badge">
-                <div class="user-icon">JC</div>
-                Juan Cruz
-            </div>
-            <a href="login.html">Log out</a>
-        </div>
-    </nav>
-
-    <!-- Book a Session Form Section -->
     <main>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <a href="edukonek.html">Dashboard</a>
+            <a href="booking.html">My Bookings</a>
+            <a href="MyCourses.html">My Courses</a>
+            <a href="AvailableSchedules.html" class="active">Available Schedules</a>
+            <a href="AppointmentSummary.html">Appointment Summary</a>
+
+            <div class="nav-right">
+                <div class="user-badge">
+                    <div class="user-icon">U</div>
+                    User
+                </div>
+                <a href="Login.html">Log out</a>
+            </div>
+        </nav>
+
+        <!-- Available Schedules Section -->
         <section class="booking-section">
             <h2>Available Schedules</h2>
             <p>Book a new mentoring session with your instructors.</p>
-        
-            <form class="booking-form">      
+            <br>
+            
+            <form class="booking-form">
                 <!-- Select Course Dropdown -->
                 <label for="course-select">Select Course</label>
                 <select id="course-select" name="course" onchange="updateMentorName()">
@@ -72,7 +77,6 @@
                         <span class="status-text">Booked</span>
                     </div>
                 </div>
-                <br>
 
                 <!-- Summary of Concern -->
                 <label for="concern-summary">Summary of Concern</label>
@@ -87,6 +91,7 @@
         </section>
     </main>
 
+    <!-- Script to handle course/mentor switching -->
     <script src="booking.js"></script>
 </body>
 </html>

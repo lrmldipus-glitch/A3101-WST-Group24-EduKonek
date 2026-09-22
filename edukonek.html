@@ -3,59 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>MMDC || EduKonek</title>
 </head>
 
-
 <body>
 
     <header>
         <div class="header-section">
-
-            <img 
-                src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" 
-                alt="MMDC Logo"
-            >
-
+            <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="MMDC Logo">
             <h1>|| EduKonek</h1>
-
         </div>
     </header>
-
 
     <main>
 
         <!-- Jermiael Llanera -->
         <!-- Log in Page -->
-
         <section>
             <div class="header-container">
                 <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="Mapua Malayan Digital College" class="logo">
-
                 <div class="divider">||</div>
-
                 <h1 class="header-title">
                     <span class="edu-text">Edu</span>Konek
                 </h1>
             </div>
         </section>
+        
         <section>
             <div class="input">
-                <p>Username: <input type="text" id=" user-input" placeholder="Enter Username"></p>
-                <p>Password: <input type="password" id=" pass-input" placeholder="Enter Password"></p>
+                <p>Username: <input type="text" id="user-input" placeholder="Enter Username"></p>
+                <p>Password: <input type="password" id="pass-input" placeholder="Enter Password"></p>
 
                 <div class="button-grp">
-                    <button type="submit" class="btn sign-in" onclick="checkCredentials">Sign in</button>
+                    <button type="submit" class="btn sign-in" onclick="checkCredentials()">Sign in</button>
                     <button type="button" class="btn sign-up" onclick="window.location.href = 'Signup.html'">Sign Up</button>
                 </div>
             </div>
         </section>
 
-                <!-- Dashboard Page -->
-
+        <!-- Dashboard Page -->
         <div class="header-container">
             <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="Mapua Malayan Digital College" class="logo">
             <div class="divider">||</div>
@@ -66,7 +54,7 @@
 
         <nav class="navbar">
             <a href="Dashboard.html" class="active">Dashboard</a>
-            <a href="MyBookings.html">My Bookings</a>
+            <a href="Booking.html">My Bookings</a>
             <a href="MyCourses.html">My Courses</a>
             <a href="AvailableSchedules.html">Available Schedules</a>
             <a href="AppointmentSummary.html">Appointment Summary</a>
@@ -99,7 +87,6 @@
                 </div>
             </div><br>
 
-
             <h2>Upcoming Mentoring Sessions</h2>
             <br>
             <table class="sessions-table">
@@ -111,7 +98,6 @@
                     <th>Purpose</th>
                     <th>Status</th>
                 </tr>
-
                 <tr>
                     <td>Computer Programming</td>
                     <td>Ms. Susan Abella</td>
@@ -120,7 +106,6 @@
                     <td>Draft Feedback</td>
                     <td>Confirmed</td>
                 </tr>
-
                 <tr>
                     <td>Computer Programming</td>
                     <td>Ms. Susan Abella</td>
@@ -129,7 +114,6 @@
                     <td>Homework 2 Assistance</td>
                     <td>Confirmed</td>
                 </tr>
-
                 <tr>
                     <td>Life and Works of Rizal</td>
                     <td>Ms. Maria Santos</td>
@@ -146,163 +130,123 @@
                 <button class="btn-primary">Book a session</button>
                 <button class="btn-secondary">View schedule</button>
             </div>
-
-            </form>
         </div>
-
 
         <!-- Maria Dipus -->
         <!-- My Courses -->    
         <section>
             <h2>My Courses</h2>
-
+            <div>
                 <div>
-
-                    <div>
-                        <h4>Life and Works of Rizal</h4>
-                        <p>Mentor: Ms. Maria Santos</p>
-                    </div>
-
-                    <div>
-                        <h4>Web Systems and Technology</h4>
-                        <p>Mentor: Mr. Miguel Cruz</p>
-                    </div>
-
-                    <div>
-                        <h4>Computer Programming</h4>
-                        <p>Mentor: Ms. Susan Abella</p>
-                    </div>
-
+                    <h4>Life and Works of Rizal</h4>
+                    <p>Mentor: Ms. Maria Santos</p>
                 </div>
+                <div>
+                    <h4>Web Systems and Technology</h4>
+                    <p>Mentor: Mr. Miguel Cruz</p>
+                </div>
+                <div>
+                    <h4>Computer Programming</h4>
+                    <p>Mentor: Ms. Susan Abella</p>
+                </div>
+            </div>
         </section>
 
-    <!-- Jabez Anthony -->
- <!-- Available Schedules -->
-    <section class="booking-section">
-        <h2>Available Schedules</h2>
-        <form class="booking-form">
-            <!-- Select Course Dropdown -->
-            <label for="course-select">Select Course</label>
-            <select id="course-select" name="course" onchange="updateMentorName()">
-                <option value="Computer Programming">Computer Programming</option>
-                <option value="Web Systems and Technology">Web Systems and Technology</option>
-                <option value="Life and Works of Rizal">Life and Works of Rizal</option>
-            </select>
+        <!-- Jabez Anthony -->
+        <!-- Available Schedules -->
+        <section class="booking-section">
+            <h2>Available Schedules</h2>
+            <form class="booking-form">
+                <!-- Select Course Dropdown -->
+                <label for="course-select">Select Course</label>
+                <select id="course-select" name="course" onchange="updateMentorName()">
+                    <option value="Computer Programming">Computer Programming</option>
+                    <option value="Web Systems and Technology">Web Systems and Technology</option>
+                    <option value="Life and Works of Rizal">Life and Works of Rizal</option>
+                </select>
 
-            <!-- Assigned Mentor -->
-            <label for="mentor-field">Mentor</label>
-            <input type="text" id="mentor-field" class="mentor-input" value="Ms. Susan Abella" readonly>
+                <!-- Assigned Mentor -->
+                <label for="mentor-field">Mentor</label>
+                <input type="text" id="mentor-field" class="mentor-input" value="Ms. Susan Abella" readonly>
 
-            <!-- Date Picker -->
-            <label for="booking-date">Date</label>
-            <input type="date" id="booking-date" value="2026-09-01">
+                <!-- Date Picker -->
+                <label for="booking-date">Date</label>
+                <input type="date" id="booking-date" value="2026-09-01">
 
-            <!-- Available Schedules Slots -->
-            <label>Select Time Slot</label>
-            <div class="schedule-container">
-                <!-- Booked Slot -->
-                <div class="schedule-row booked">
-                    <label><input type="checkbox" disabled> 9:00 AM - 9:15 AM</label>
-                    <span class="status-text">Booked</span>
+                <!-- Available Schedules Slots -->
+                <label>Select Time Slot</label>
+                <div class="schedule-container">
+                    <div class="schedule-row booked">
+                        <label><input type="checkbox" disabled> 9:00 AM - 9:15 AM</label>
+                        <span class="status-text">Booked</span>
+                    </div>
+                    <div class="schedule-row available active-slot">
+                        <label><input type="checkbox"> 1:30 PM - 1:45 PM</label>
+                        <span class="status-text">Available</span>
+                    </div>
+                    <div class="schedule-row booked">
+                        <label><input type="checkbox" disabled> 8:00 PM - 8:15 PM</label>
+                        <span class="status-text">Booked</span>
+                    </div>
                 </div>
-                <!-- Available / Selectable Slot -->
-                <div class="schedule-row available active-slot">
-                    <label><input type="checkbox"> 1:30 PM - 1:45 PM</label>
-                    <span class="status-text">Available</span>
-                </div>
-                <!-- Booked Slot -->
-                <div class="schedule-row booked">
-                    <label><input type="checkbox" disabled> 8:00 PM - 8:15 PM</label>
-                    <span class="status-text">Booked</span>
-                </div>
-            </div>
 
-            <!-- Summary of Concern -->
-            <label for="concern-summary">Summary of Concern</label>
-            <textarea id="concern-summary" placeholder="Write a brief summary of your concern...."></textarea>
+                <!-- Summary of Concern -->
+                <label for="concern-summary">Summary of Concern</label>
+                <textarea id="concern-summary" placeholder="Write a brief summary of your concern...."></textarea>
 
-            <!-- Action Buttons -->
-            <div class="form-actions">
-                <button type="button" class="btn-secondary">Save as Draft</button>
-                <button type="submit" class="btn-primary">Confirm Booking</button>
-            </div>
-        </form>
-    <script>
-    function updateMentorName() {
-        const courseSelect = document.getElementById("course-select");
-        const mentorField = document.getElementById("mentor-field");
-        
-        const selectedCourse = courseSelect.value;
-        
-        if (selectedCourse === "Computer Programming") {
-            mentorField.value = "Ms. Susan Abella";
-        } else if (selectedCourse === "Web Systems and Technology") {
-            mentorField.value = "Mr. Miguel Cruz";
-        } else if (selectedCourse === "Life and Works of Rizal") {
-            mentorField.value = "Ms. Maria Santos";
-        }
-    }
-</script>
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary">Save as Draft</button>
+                    <button type="submit" class="btn-primary">Confirm Booking</button>
+                </div>
+            </form>
+        </section>
+
         <!-- Maria Dipus -->
         <!-- Teacher's Appointment Summary -->
         <section>   
             <h2>My Appointments</h2>
             <p><em>Overview of your booked mentoring sessions.</em></p>
             <h3>Upcoming Bookings</h3>
-                <table>
-                    <tr>
-                        <th>Student</th>
-                        <th>Course</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Purpose</th>
-                        <th>Status</th>
-                    </tr>
-        
-                    <tr>
-                        <td>Juan Cruz</td>
-                        <td>Computer Programming</td>
-                        <td>September 1, 2026</td>
-                        <td>9:00 AM - 9:15 AM</td>
-                        <td>Draft Feedback</td>
-                        <td>Confirmed</td>
-                    </tr> 
-        
-                    <tr>
-                        <td>Ana Reyes</td>
-                        <td>Computer Programming</td>
-                        <td>September 1, 2026</td>
-                        <td>1:00 PM - 1:15 PM</td>
-                        <td>Homework 2 Assistance</td>
-                        <td>Confirmed</td>
-                    </tr> 
-
-                    <tr>
-                        <td>Miguel Torres</td>
-                        <td>Computer Programming</td>
-                        <td>September 2, 2026</td>
-                        <td>9:00 AM - 9:15 AM</td>
-                        <td>Project Walkthrough</td>
-                        <td>Cancelled</td>
-                    </tr> 
-                </table>
-            
+            <table>
+                <tr>
+                    <th>Student</th>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Purpose</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Juan Cruz</td>
+                    <td>Computer Programming</td>
+                    <td>September 1, 2026</td>
+                    <td>9:00 AM - 9:15 AM</td>
+                    <td>Draft Feedback</td>
+                    <td>Confirmed</td>
+                </tr> 
+                <tr>
+                    <td>Ana Reyes</td>
+                    <td>Computer Programming</td>
+                    <td>September 1, 2026</td>
+                    <td>1:00 PM - 1:15 PM</td>
+                    <td>Homework 2 Assistance</td>
+                    <td>Confirmed</td>
+                </tr> 
+                <tr>
+                    <td>Miguel Torres</td>
+                    <td>Computer Programming</td>
+                    <td>September 2, 2026</td>
+                    <td>9:00 AM - 9:15 AM</td>
+                    <td>Project Walkthrough</td>
+                    <td>Cancelled</td>
+                </tr> 
+            </table>
         </section>
 
-
         <!-- Jermiael Llanera -->
-        <!-- Sign up Page -->
-
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="Signup.css">
-            <title>EduKonek</title>
-        </head>
-        <body>
-
+        <!-- Sign up Section -->
+        <section>
             <div class="header-container">
                 <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="Mapua Malayan Digital College" class="logo">
                 <div class="divider">||</div>
@@ -311,7 +255,6 @@
                 </h1>
             </div>
 
-        <section>
             <div class="form-container">
                 <p>First Name: <input type="text" placeholder="Enter text"></p>
                 <p>Password: <input type="password" placeholder="Enter password"></p>
@@ -331,7 +274,10 @@
                 </div>
             </div>
         </section>
- 
-        </main>
-    </body>
+
+    </main>
+
+    <!-- Jabez Anthony Booking Script -->
+    <script src="booking.js"></script>
+</body>
 </html>
