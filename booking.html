@@ -1,123 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>MMDC || EduKonek - Book a Session</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>MMDC || EduKonek - Book a Session</title>
+    </head>
 
-<body>
-    <header>
-        <div class="header-section">
-            <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="MMDC Logo">
-            <h1>|| EduKonek</h1>
-        </div>
-    </header>
+    <body>
+        <header>
+            <div class="header-section">
+                <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="MMDC Logo">
+                <h1>|| EduKonek</h1>
+            </div>
+        </header>
 
-<<<<<<< HEAD
-    <!-- Navbar: Dashboard and Book a Session are properly separated -->
-    <nav class="navbar">
-        <a href="student.html">Dashboard</a>
-        <a href="booking.html" class="active">Book a Session</a>
-
-        <div class="nav-right">
-            <div class="user-badge">
-                <div class="user-icon">JC</div>
-                Juan Cruz
-=======
-        <!-- Navbar -->
         <nav class="navbar">
             <a href="student.html">Dashboard</a>
-<!--            <a href="MyCourses.html">My Courses</a>                -->
             <a href="booking.html" class="active">Book a Session</a>
-<!--             <a href="AvailableSchedules.html">Available Schedules</a>
-                  <a href="AppointmentSummary.html">Appointment Summary</a>
--->
+
             <div class="nav-right">
                 <div class="user-badge">
                     <div class="user-icon">JC</div>
                     Juan Cruz
                 </div>
-                <a href="index.html">Log out</a>
->>>>>>> 35f38cedccbc60777fb23c4fbcff9eeb652146ab
+                <a href="login.html">Log out</a>
             </div>
-            <a href="index.html">Log out</a>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Book a Session Form Section -->
-    <main>
-        <section class="booking-section">
-<<<<<<< HEAD
-            <h2>Available Schedules</h2>
-            <p>Book a new mentoring session with your instructors.</p>
-        
-            <form class="booking-form">      
-                <!-- Select Course Dropdown -->
-                <label for="course-select">Select Course</label>
-                <select id="course-select" name="course" onchange="updateMentorName()">
-                    <option value="Computer Programming">Computer Programming</option>
-                    <option value="Web Systems and Technology">Web Systems and Technology</option>
-                    <option value="Life and Works of Rizal">Life and Works of Rizal</option>
-                </select>
-=======
-<!--                <h2>Available Schedules</h2>
-                 <p>Book a new mentoring session with your instructors.</p>              --> 
+        <main>
+            <section class="booking-section">
+                <h2>Available Schedules</h2>
+                <p>Book a new mentoring session with your instructors.</p>
             
                 <form class="booking-form">      
-                    <!-- Select Course Dropdown -->
                     <label for="course-select">Select Course</label>
                     <select id="course-select" name="course" onchange="updateMentorName()">
                         <option value="Computer Programming">Computer Programming</option>
                         <option value="Web Systems and Technology">Web Systems and Technology</option>
                         <option value="Life and Works of Rizal">Life and Works of Rizal</option>
                     </select>
->>>>>>> 35f38cedccbc60777fb23c4fbcff9eeb652146ab
 
-                <!-- Assigned Mentor -->
-                <label for="mentor-field">Mentor</label>
-                <input type="text" id="mentor-field" class="mentor-input" value="Ms. Susan Abella" readonly>
+                    <label for="mentor-field">Mentor</label>
+                    <input type="text" id="mentor-field" class="mentor-input" value="Ms. Susan Abella" readonly>
 
-                <!-- Date Picker -->
-                <label for="booking-date">Date</label>
-                <input type="date" id="booking-date" value="2026-09-01">
+                    <label for="booking-date">Date</label>
+                    <input type="date" id="booking-date" value="2026-09-01">
 
-                <!-- Available Schedules Slots -->
-                <label>Select Time Slot</label>
-                <div class="schedule-container">
-                    <!-- Booked Slot -->
-                    <div class="schedule-row booked">
-                        <label><input type="checkbox" disabled> 9:00 AM - 9:15 AM</label>
-                        <span class="status-text">Booked</span>
+                    <label>Select Time Slot</label>
+                    <div class="schedule-container">
+                        <div class="schedule-row booked">
+                            <label><input type="checkbox" disabled> 9:00 AM - 9:15 AM</label>
+                            <span class="status-text">Booked</span>
+                        </div>
+                        <div class="schedule-row available active-slot">
+                            <label><input type="checkbox"> 1:30 PM - 1:45 PM</label>
+                            <span class="status-text">Available</span>
+                        </div>
+                        <div class="schedule-row booked">
+                            <label><input type="checkbox" disabled> 8:00 PM - 8:15 PM</label>
+                            <span class="status-text">Booked</span>
+                        </div>
                     </div>
-                    <!-- Available / Selectable Slot -->
-                    <div class="schedule-row available active-slot">
-                        <label><input type="checkbox"> 1:30 PM - 1:45 PM</label>
-                        <span class="status-text">Available</span>
+                    <br>
+
+                    <label for="concern-summary">Summary of Concern</label>
+                    <textarea id="concern-summary" placeholder="Write a brief summary of your concern...."></textarea>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Save as Draft</button>
+                        <button type="submit" class="btn-primary">Confirm Booking</button>
                     </div>
-                    <!-- Booked Slot -->
-                    <div class="schedule-row booked">
-                        <label><input type="checkbox" disabled> 8:00 PM - 8:15 PM</label>
-                        <span class="status-text">Booked</span>
-                    </div>
-                </div>
-                <br>
+                </form>
+            </section>
+        </main>
 
-                <!-- Summary of Concern -->
-                <label for="concern-summary">Summary of Concern</label>
-                <textarea id="concern-summary" placeholder="Write a brief summary of your concern...."></textarea>
-
-                <!-- Action Buttons -->
-                <div class="form-actions">
-                    <button type="button" class="btn-secondary">Save as Draft</button>
-                    <button type="submit" class="btn-primary">Confirm Booking</button>
-                </div>
-            </form>
-        </section>
-    </main>
-
-    <script src="booking.js"></script>
-</body>
-</html>
+        <script src="booking.js"></script>
+    </body>
+    </html>
