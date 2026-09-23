@@ -12,7 +12,7 @@ function checkCredentials() {
         window.location.href = "teacher.html";
     } else if (username === "Student" && password === "12345") {
         alert("Login successful, Welcome!" );
-        window.location.href = "Student.html";
+        window.location.href = "student.html";
     } else {
         alert("Invalid username or password.");
     }

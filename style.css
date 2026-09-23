@@ -71,7 +71,7 @@ main,
     margin-left: auto;
 }
 
-.nav-right a[href="Login.html"] {
+.nav-right a[href="index.html"] {
     background-color: #d93025;
     color: #ffffff;
     padding: 10px 14px;
@@ -79,7 +79,7 @@ main,
     font-weight: 700;
 }
 
-.nav-right a[href="Login.html"]:hover {
+.nav-right a[href="index.html"]:hover {
     background-color: #b3261e;
 }
 
