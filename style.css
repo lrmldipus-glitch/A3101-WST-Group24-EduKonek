@@ -34,7 +34,6 @@ body {
     font-size: 6rem;
     margin-left: 20px;
     color: #0a205f;
-    margin-bottom: 25;
 }
 
 /* --- NAVBAR changes from here --- */
@@ -179,7 +178,7 @@ section h2 {
 /* --- to here LOGIN changes --- */
 
 
-/* --- booking-form position changes --- */
+/* --- BOOKING FORM position changes --- */
 form {
     display: flex;
     flex-direction: column;
@@ -195,14 +194,12 @@ form label {
 
 form input,
 form select,
-form textarea,
-form button {
+form textarea {
     width: 100%;
     padding: 10px 12px;
     font-size: 1rem;
     border: 1px solid #cdd7e5;
     border-radius: 8px;
-    box-sizing: border-box;
 }
 
 form textarea {
@@ -211,7 +208,6 @@ form textarea {
 }
 
 button,
-form button,
 .btn-primary,
 .btn-secondary {
     display: inline-block;
@@ -228,7 +224,6 @@ form button,
 }
 
 button:hover,
-form button:hover,
 .btn-primary:hover,
 .btn-secondary:hover {
     background-color: #143d96;
@@ -260,7 +255,6 @@ form button:hover,
     color: white;
     background-color: rgb(5, 0, 105);
     padding: 20px;
-    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
