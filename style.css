@@ -247,11 +247,13 @@ form button:hover,
     margin-top: 10px;
 }
 
-/* My Courses */
+/* My Courses and Dashboard Boxes */
+.dashboard-container,
 .course-container {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-direction: row;
 }
 
 .course {
