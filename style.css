@@ -252,7 +252,6 @@ form button:hover,
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .course {
@@ -296,6 +295,7 @@ table {
     border-collapse: collapse;
     margin-top: 10px;
     background-color: #f3f8ff;
+    table-layout: fixed;
 }
 
 th {
