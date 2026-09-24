@@ -362,7 +362,7 @@ td {
 .course-description {
     margin-top: 20px;
     padding: 7px;
-    width: min(800px, 100%);
+    width: min(1200px, 100%);
 
     background-color: #dfeeff;
     color: #0a205f;
