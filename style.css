@@ -248,10 +248,12 @@ form button:hover,
 }
 
 /* My Courses */
+.dashboard-container,
 .course-container {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
