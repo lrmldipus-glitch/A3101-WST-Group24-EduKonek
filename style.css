@@ -109,7 +109,6 @@ body {
 
 /* --- from here BODY WIDTH changes --- */
 section {
-    display: block;
     width: 100%;
     margin: 20px auto;
     max-width: 1500px;
@@ -179,7 +178,7 @@ section h2 {
 /* --- to here LOGIN changes --- */
 
 
-/* --- booking-form position changes --- */
+/* --- BOOKING FORM here (position changes) --- */
 form {
     display: flex;
     flex-direction: column;
@@ -202,7 +201,6 @@ form button {
     font-size: 1rem;
     border: 1px solid #cdd7e5;
     border-radius: 8px;
-    box-sizing: border-box;
 }
 
 form textarea {
@@ -210,10 +208,7 @@ form textarea {
     min-height: 120px;
 }
 
-button,
-form button,
-.btn-primary,
-.btn-secondary {
+button {
     display: inline-block;
     width: fit-content;
     min-width: 140px;
@@ -227,10 +222,7 @@ form button,
     transition: background-color 0.2s ease;
 }
 
-button:hover,
-form button:hover,
-.btn-primary:hover,
-.btn-secondary:hover {
+button:hover {
     background-color: #143d96;
 }
 
