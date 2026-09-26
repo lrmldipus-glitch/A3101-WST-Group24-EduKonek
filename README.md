@@ -10,6 +10,9 @@ Jermiael Allen Jade Llanera,
 Karina Fae Peña,
 Maria Leorrie Dipus
 
+# EduKonek URL 
+https://lrmldipus-glitch.github.io/A3101-WST-Group24-EduKonek/index.html
+
 # EduKonek
 EduKonek is a browser-based student-teacher mentoring booking system designed to improve the traditional spreadsheet-based process of scheduling mentoring sessions.
 The system provides a centralized platform where students can view available mentoring schedules, select a teacher or mentor, book a session, and receive booking confirmation. Teachers and mentors can manage their available schedules, view student bookings, and monitor their scheduled mentoring appointments.
