@@ -43,10 +43,15 @@ Node.js – Backend development
 # Login Credentials:
 
 • Students
+
     Username: Student
+
     Password: 12345
+
 • Teachers/Mentors
-    Username: Student
+
+    Username: Mentor
+
     Password: 12345
 
 # Project Status
