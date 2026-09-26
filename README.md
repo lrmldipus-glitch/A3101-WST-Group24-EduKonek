@@ -39,6 +39,16 @@ JavaScript – Frontend interactions, validation, booking selections, and dynami
 
 Node.js – Backend development
 
+
+# Login Credentials:
+
+• Students
+    Username: Student
+    Password: 12345
+• Teachers/Mentors
+    Username: Student
+    Password: 12345
+
 # Project Status
 🚧 In Development
 The project follows a 12-week development plan covering frontend development, backend development, database integration, quality assurance, documentation, and final project presentation.
@@ -49,3 +59,5 @@ This document outlines the development workflow of EduKonek, including its plann
 
 • EduKonek Wireframes (https://canva.link/0jbokl76jspfwj6)
 This document presents the wireframes of EduKonek, illustrating the planned layout, structure, and user interface of the student and teacher portals. It serves as a visual guide for the application's design and development.
+
+• AI Use Statement (https://docs.google.com/document/d/1PAQkhN8q5vH8eLpN8YVOObW-gmlWw4d1zpbJe8no8SQ/edit?usp=sharing) 
