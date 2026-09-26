@@ -9,6 +9,10 @@ body {
     color: #0a205f;
 }
 
+main {
+    margin: 20px;
+}
+
 .content {
     padding: 0 24px 24px;
 }
@@ -112,6 +116,10 @@ section {
     width: 100%;
     margin: 20px auto;
     max-width: 1500px;
+}
+
+.booking-section {
+    margin: 20px;
 }
 /* --- to here BODY WIDTH changes --- */
 
