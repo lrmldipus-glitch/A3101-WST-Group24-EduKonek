@@ -13,6 +13,20 @@ Maria Leorrie Dipus
 # EduKonek URL 
 https://lrmldipus-glitch.github.io/A3101-WST-Group24-EduKonek/index.html
 
+# Login Credentials:
+
+• Students
+
+    Username: Student
+
+    Password: 12345
+
+• Teachers/Mentors
+
+    Username: Mentor
+
+    Password: 12345
+
 # EduKonek
 EduKonek is a browser-based student-teacher mentoring booking system designed to improve the traditional spreadsheet-based process of scheduling mentoring sessions.
 The system provides a centralized platform where students can view available mentoring schedules, select a teacher or mentor, book a session, and receive booking confirmation. Teachers and mentors can manage their available schedules, view student bookings, and monitor their scheduled mentoring appointments.
@@ -38,21 +52,6 @@ CSS – Styling, layout, typography, forms, buttons, and responsive design
 JavaScript – Frontend interactions, validation, booking selections, and dynamic content
 
 Node.js – Backend development
-
-
-# Login Credentials:
-
-• Students
-
-    Username: Student
-
-    Password: 12345
-
-• Teachers/Mentors
-
-    Username: Mentor
-
-    Password: 12345
 
 # Project Status
 🚧 In Development
