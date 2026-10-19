@@ -1,0 +1,424 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #0a205f;
+}
+
+main {
+    margin: 20px;
+}
+
+.content {
+    padding: 0 24px 24px;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eef3fa;
+    padding: 15px;
+    text-align: center;
+}
+
+.header-section img,
+.logo {
+    width: auto;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+}
+
+.header-section h1 {
+    font-size: 6rem;
+    margin-left: 20px;
+    color: #0a205f;
+    margin-bottom: 25;
+}
+
+/* --- NAVBAR changes from here --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #0a205f;
+    padding: 0 24px;
+    box-shadow: 0 2px 8px rgba(10, 32, 95, 0.15);
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 16px 14px;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: #d93025;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.nav-right a[href="index.html"] {
+    background-color: #d93025;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.nav-right a[href="index.html"]:hover {
+    background-color: #b3261e;
+}
+
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.user-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #0a205f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+/* --- to here NAVBAR changes --- */
+
+/* --- from here BODY WIDTH changes --- */
+section {
+    width: 100%;
+    margin: 20px auto;
+    max-width: 1500px;
+}
+
+.booking-section {
+    margin: 20px;
+}
+/* --- to here BODY WIDTH changes --- */
+
+section h2 {
+    margin-bottom: 12px;
+    color: #0a205f;
+}
+
+/* --- from here LOGIN changes --- */
+.login-box {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 24px;
+    border: 1px solid #cdd7e5;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(10, 32, 95, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+}
+/* ---  MMDC LOGO size changes --- */
+.header-container .logo {
+    height: 150px;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.input {
+    max-width: 500px;
+    margin: 20px auto 0;
+}
+
+.input p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 14px;
+}
+
+.input input {
+    width: min(100%, 360px);
+    padding: 10px 12px;
+    border: 1px solid #cdd7e5;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.button-grp {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+/* --- to here LOGIN changes --- */
+
+
+/* --- BOOKING FORM here (position changes) --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+form label {
+    font-weight: 600;
+    color: #0a205f;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #cdd7e5;
+    border-radius: 8px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button {
+    display: inline-block;
+    width: fit-content;
+    min-width: 140px;
+    padding: 10px 18px;
+    background-color: #0a205f;
+    color: white;
+    font-weight: 600;
+    border: 1px solid #0a205f;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #143d96;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* My Courses and Dashboard Boxes */
+.dashboard-container,
+.course-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: row;
+}
+
+.course {
+    border: 1px solid lightblue;
+    border-radius: 12px;
+    height: 110px;
+    width: 400px;
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    background-color: rgb(5, 0, 105);
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* made adjustments to each course */
+#WST-course:hover,
+#LWR-course:hover,
+#CP-course:hover{
+    color: gray
+}
+
+.course h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.course p {
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+table {
+    width: 100%;
+    font-size: 1.1rem;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #f3f8ff;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #dfeeff;
+    color: #0a205f;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid #d2d8e0;
+}
+/* --- Jabez Anthony: My Bookings & Available Schedules Section Styling --- */
+
+.schedule-container {
+    border: 1px solid #d2d8e0;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.schedule-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.schedule-row:last-child {
+    border-bottom: none;
+}
+
+.schedule-row.booked {
+    color: #888;
+}
+
+.schedule-row.available {
+    color: #0a205f;
+    font-weight: bold;
+}
+
+.schedule-row.active-slot {
+    border: 1px solid #0a205f;
+    border-radius: 4px;
+    background-color: #f8fafe;
+}
+
+.mentor-input {
+    background-color: #eef3fa;
+    color: #555;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* added my course description styling */ 
+/* Course Description */
+.course-description {
+    margin-top: 20px;
+    padding: 7px;
+    width: min(1200px, 100%);
+
+    background-color: #dfeeff;
+    color: #0a205f;
+
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
+.course-description h4 {
+    margin-bottom: 5px;
+}
+
+.course-description p {
+    margin-top: 0;
+}
+
+
+/*Styling for possible Signup*/
+.input {
+    max-width: 650px;
+    margin: 20px auto 0;
+    font-size: 1.2rem;
+}
+
+.input p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0 0 18px;
+}
+
+.input span {
+    display: inline-block;
+    width: 160px;
+}
+
+.input input {
+    width: 360px;
+    padding: 12px 14px;
+    font-size: 1.1rem;
+    border: 1px solid #cdd7e5;
+    border-radius: 8px;
+}
+
+/*Added for the possible Signup*/
+.input select {
+    width: 360px;
+    padding: 12px 14px;
+    font-size: 1.1rem;
+    border: 1px solid #cdd7e5;
+    border-radius: 8px;
+}
+
+.input input[type="radio"] {
+    width: auto;
+    padding: 0;
+}
+
+.input .gender-options {
+    width: 360px;
+    text-align: left;
+}
