@@ -11,7 +11,7 @@ app.post("/login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  
+
   const user = db.prepare("SELECT * FROM users WHERE username = ?").get(username);
 
   if (!user) {
@@ -130,6 +130,7 @@ app.post("/api/bookings", (req, res) => {
     return res.status(400).json({ message: "That time slot does not exist for this mentor." });
   }
 
+  /* only a real booking (Pending) needs the slot to be free */
   if (status === "Pending") {
     const taken = db.prepare("SELECT id FROM bookings WHERE mentor = ? AND booking_date = ? AND time_slot = ? AND status IN ('Pending', 'Confirmed')")
       .get(mentor, date, timeSlot);
@@ -138,32 +139,13 @@ app.post("/api/bookings", (req, res) => {
       return res.status(409).json({ message: "Sorry, that slot was just booked. Please pick another." });
     }
   }
-    if (status === "Draft") {
-    const existing = db.prepare("SELECT id FROM bookings WHERE student_username = ? AND mentor = ? AND booking_date = ? AND time_slot = ? AND status = 'Draft'")
-      .get(student, mentor, date, timeSlot);
 
-    if (existing) {
-      db.prepare("UPDATE bookings SET course = ?, concern = ? WHERE id = ?").run(course, concern, existing.id);
-      return res.json({ message: "Draft saved.", id: existing.id });
-    }
-  }
+  db.prepare("INSERT INTO bookings (student_username, course, mentor, booking_date, time_slot, concern, status) VALUES (?, ?, ?, ?, ?, ?, ?)")
+    .run(student, course, mentor, date, timeSlot, concern, status);
 
-  try {
-    const result = db.prepare("INSERT INTO bookings (student_username, course, mentor, booking_date, time_slot, concern, status) VALUES (?, ?, ?, ?, ?, ?, ?)")
-      .run(student, course, mentor, date, timeSlot, concern, status);
-
-          if (status === "Pending") {
-      db.prepare("DELETE FROM bookings WHERE student_username = ? AND mentor = ? AND booking_date = ? AND time_slot = ? AND status = 'Draft'")
-        .run(student, mentor, date, timeSlot);
-    }
-
-    res.json({
-      message: status === "Draft" ? "Draft saved." : "Booking submitted! Waiting for mentor confirmation.",
-      id: Number(result.lastInsertRowid)
-    });
-  } catch (err) {
-    res.status(409).json({ message: "Sorry, that slot was just booked. Please pick another." });
-  }
+  res.json({
+    message: status === "Draft" ? "Draft saved." : "Booking submitted! Waiting for mentor confirmation."
+  });
 });
 
 /* GET /api/bookings?student=username  (for "My Bookings") */
