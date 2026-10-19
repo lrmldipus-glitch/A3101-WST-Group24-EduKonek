@@ -45,10 +45,6 @@ db.exec(`
     status TEXT NOT NULL,
     created_at TEXT DEFAULT CURRENT_TIMESTAMP
   );
-
-  CREATE UNIQUE INDEX IF NOT EXISTS one_active_booking_per_slot
-    ON bookings (mentor, booking_date, time_slot)
-    WHERE status IN ('Pending', 'Confirmed');
 `);
 
 const slotCount = db.prepare("SELECT COUNT(*) AS total FROM mentor_availability").get().total;
