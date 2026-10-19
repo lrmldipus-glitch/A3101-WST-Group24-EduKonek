@@ -31,8 +31,7 @@ window.updateMentorName = function() {
     loadSlots();
 };
 
-/* Ask the server which slots are open for this mentor + date */
-async function loadSlots() {
+function loadSlots() {
     var mentor = document.getElementById("mentor-field").value;
     var date = document.getElementById("booking-date").value;
     var container = document.querySelector(".schedule-container");
@@ -44,15 +43,17 @@ async function loadSlots() {
         return;
     }
 
-    try {
-        var response = await fetch("/api/slots?mentor=" + encodeURIComponent(mentor) + "&date=" + encodeURIComponent(date));
-        var slots = await response.json();
-        renderSlots(slots, container);
-    } catch (err) {
-        container.textContent = "Could not load schedules. Is the server running?";
-    }
+    fetch("/api/slots?mentor=" + encodeURIComponent(mentor) + "&date=" + encodeURIComponent(date))
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (slots) {
+            renderSlots(slots, container);
+        })
+        .catch(function () {
+            container.textContent = "Could not load schedules. Is the server running?";
+        });
 }
-
 function renderSlots(slots, container) {
     container.innerHTML = "";
 
@@ -95,8 +96,7 @@ function renderSlots(slots, container) {
     });
 }
 
-/* status: "Draft" for Save as Draft, "Pending" for Confirm Booking */
-async function submitBooking(status) {
+function submitBooking(status) {
     var concern = document.getElementById("concern-summary").value.trim();
 
     if (!selectedSlot) {
@@ -119,25 +119,29 @@ async function submitBooking(status) {
         status: status
     };
 
-    try {
-        var response = await fetch("/api/bookings", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body)
+    var saved = false;
+
+    fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+    })
+        .then(function (response) {
+            saved = response.ok;
+            return response.json();
+        })
+        .then(function (data) {
+            alert(data.message);
+
+            if (saved) {
+                document.getElementById("concern-summary").value = "";
+            }
+            loadSlots();
+        })
+        .catch(function () {
+            alert("Could not reach the server. Is it running?");
         });
-        var data = await response.json();
-
-        alert(data.message);
-
-        if (response.ok) {
-            document.getElementById("concern-summary").value = "";
-        }
-        loadSlots();
-    } catch (err) {
-        alert("Could not reach the server. Is it running?");
-    }
 }
-
 document.addEventListener("DOMContentLoaded", function () {
     var dateInput = document.getElementById("booking-date");
     dateInput.min = todayString();
