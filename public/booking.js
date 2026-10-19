@@ -1,11 +1,25 @@
 /* --- Jabez Anthony: Booking & Available Schedules Script --- */
 
+var selectedSlot = null;
+
+/* Who is logged in? Falls back to "student" until login saves the username. */
+function getStudent() {
+    return sessionStorage.getItem("username") || "student";
+}
+
+function todayString() {
+    var d = new Date();
+    var month = String(d.getMonth() + 1).padStart(2, "0");
+    var day = String(d.getDate()).padStart(2, "0");
+    return d.getFullYear() + "-" + month + "-" + day;
+}
+
 window.updateMentorName = function() {
     const courseSelect = document.getElementById("course-select");
     const mentorField = document.getElementById("mentor-field");
-    
+
     const selectedCourse = courseSelect.value;
-    
+
     if (selectedCourse === "Computer Programming") {
         mentorField.value = "Ms. Susan Abella";
     } else if (selectedCourse === "Web Systems and Technology") {
@@ -13,4 +27,131 @@ window.updateMentorName = function() {
     } else if (selectedCourse === "Life and Works of Rizal") {
         mentorField.value = "Ms. Maria Santos";
     }
+
+    loadSlots();
 };
+
+/* Ask the server which slots are open for this mentor + date */
+async function loadSlots() {
+    var mentor = document.getElementById("mentor-field").value;
+    var date = document.getElementById("booking-date").value;
+    var container = document.querySelector(".schedule-container");
+
+    selectedSlot = null;
+
+    if (!date) {
+        container.innerHTML = "";
+        return;
+    }
+
+    try {
+        var response = await fetch("/api/slots?mentor=" + encodeURIComponent(mentor) + "&date=" + encodeURIComponent(date));
+        var slots = await response.json();
+        renderSlots(slots, container);
+    } catch (err) {
+        container.textContent = "Could not load schedules. Is the server running?";
+    }
+}
+
+function renderSlots(slots, container) {
+    container.innerHTML = "";
+
+    slots.forEach(function (slot) {
+        var isBooked = slot.status === "Booked";
+
+        var row = document.createElement("div");
+        row.className = "schedule-row " + (isBooked ? "booked" : "available");
+
+        var label = document.createElement("label");
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.disabled = isBooked;
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(" " + slot.time));
+
+        var status = document.createElement("span");
+        status.className = "status-text";
+        status.textContent = slot.status;
+
+        row.appendChild(label);
+        row.appendChild(status);
+        container.appendChild(row);
+
+        /* only one slot can be chosen at a time */
+        checkbox.addEventListener("change", function () {
+            container.querySelectorAll(".schedule-row").forEach(function (r) {
+                r.classList.remove("active-slot");
+                var box = r.querySelector("input");
+                if (box !== checkbox) box.checked = false;
+            });
+
+            if (checkbox.checked) {
+                row.classList.add("active-slot");
+                selectedSlot = slot.time;
+            } else {
+                selectedSlot = null;
+            }
+        });
+    });
+}
+
+/* status: "Draft" for Save as Draft, "Pending" for Confirm Booking */
+async function submitBooking(status) {
+    var concern = document.getElementById("concern-summary").value.trim();
+
+    if (!selectedSlot) {
+        alert("Please select a time slot.");
+        return;
+    }
+
+    if (status === "Pending" && !concern) {
+        alert("Please write a short summary of your concern.");
+        return;
+    }
+
+    var body = {
+        student: getStudent(),
+        course: document.getElementById("course-select").value,
+        mentor: document.getElementById("mentor-field").value,
+        date: document.getElementById("booking-date").value,
+        timeSlot: selectedSlot,
+        concern: concern,
+        status: status
+    };
+
+    try {
+        var response = await fetch("/api/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        var data = await response.json();
+
+        alert(data.message);
+
+        if (response.ok) {
+            document.getElementById("concern-summary").value = "";
+        }
+        loadSlots();
+    } catch (err) {
+        alert("Could not reach the server. Is it running?");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var dateInput = document.getElementById("booking-date");
+    dateInput.min = todayString();
+    dateInput.value = todayString();
+    dateInput.addEventListener("change", loadSlots);
+
+    document.querySelector(".booking-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        submitBooking("Pending");
+    });
+
+    document.querySelector(".btn-secondary").addEventListener("click", function () {
+        submitBooking("Draft");
+    });
+
+    updateMentorName();
+});
