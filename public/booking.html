@@ -1,0 +1,82 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>MMDC || EduKonek - Book a Session</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="header-section">
+                <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="MMDC Logo">
+                <h1>|| EduKonek</h1>
+            </div>
+        </header>
+
+        <nav class="navbar">
+            <a href="student.html">Dashboard</a>
+            <a href="booking.html" class="active">Book a Session</a>
+
+            <div class="nav-right">
+                <div class="user-badge">
+                    <div class="user-icon"></div>
+                    <span class="student-name">Student</span>
+                </div>
+                <a href="index.html" onclick="sessionStorage.clear()">Log out</a>
+            </div>
+        </nav>
+
+        <main>
+            <section class="booking-section">
+                <h2>Available Schedules</h2>
+                <p>Book a new mentoring session with your instructors.</p>
+            
+                <form class="booking-form">      
+                    <label for="course-select">Select Course</label>
+                    <select id="course-select" name="course" onchange="updateMentorName()">
+                        <option value="Computer Programming">Computer Programming</option>
+                        <option value="Web Systems and Technology">Web Systems and Technology</option>
+                        <option value="Life and Works of Rizal">Life and Works of Rizal</option>
+                    </select>
+
+                    <label for="mentor-field">Mentor</label>
+                    <input type="text" id="mentor-field" class="mentor-input" value="Ms. Susan Abella" readonly>
+
+                    <label for="booking-date">Date</label>
+                    <input type="date" id="booking-date" value="2026-09-01">
+
+                    <label>Select Time Slot</label>
+                    <div class="schedule-container">
+                        <div class="schedule-row booked">
+                            <label><input type="checkbox" disabled> 9:00 AM - 9:15 AM</label>
+                            <span class="status-text">Booked</span>
+                        </div>
+                        <div class="schedule-row available active-slot">
+                            <label><input type="checkbox"> 1:30 PM - 1:45 PM</label>
+                            <span class="status-text">Available</span>
+                        </div>
+                        <div class="schedule-row booked">
+                            <label><input type="checkbox" disabled> 8:00 PM - 8:15 PM</label>
+                            <span class="status-text">Booked</span>
+                        </div>
+                    </div>
+                    <br>
+
+                    <label for="concern-summary">Summary of Concern</label>
+                    <textarea id="concern-summary" placeholder="Write a brief summary of your concern...."></textarea>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Save as Draft</button>
+                        <button type="submit" class="btn-primary">Confirm Booking</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <script src="user.js"></script>
+        <script src="booking.js"></script>
+    </body>
+    </html>

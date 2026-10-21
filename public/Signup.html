@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MMDC || EduKonek</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="login-box">
+            <section>
+                <div class="header-container">
+                    <img src="https://media.mmdc.com.ph/MMDC%20Social%20Media%20Logo" alt="Mapua Malayan Digital College" class="logo">
+
+                    <h1 class="header-title">
+                        <span class="edu-text">|| Edu</span>Konek
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Sign Up Page -->
+            <section>
+                <div class="input">
+                    <p><span>First Name:</span> <input type="text" id="first-name" placeholder="Enter first name"></p>
+                    <p><span>Last Name:</span> <input type="text" id="last-name" placeholder="Enter last name"></p>
+                    <p><span>Username:</span> <input type="text" id="username" placeholder="Choose a username"></p>
+                    <p><span>Course:</span>
+                        <select id="course" name="course">
+                            <option value="BSIT">BSIT - Information Technology</option>
+                            <option value="BSBA">BSBA - Business Administration</option>
+                            <option value="BSCE">BSCE - Computer Engineering</option>
+                            <option value="BSCS">BSCS - Computer Science</option>
+                        </select>
+                    </p>
+                    <p><span>Password:</span> <input type="password" id="password" placeholder="Enter password"></p>
+                    <p><span>Email Address:</span> <input type="email" id="email" placeholder="Enter email"></p>
+                    <p><span>Phone Number:</span> <input type="tel" id="phone" placeholder="Enter phone number"></p>
+                    <p><span>Student ID:</span> <input type="text" id="student-id" placeholder="Enter student number"></p>
+                    <p>
+                        <span>Gender:</span>
+                        <span class="gender-options">
+                            <input type="radio" name="gender" value="male"> Male
+                            <input type="radio" name="gender" value="female"> Female
+                        </span>
+                    </p>
+
+                    <div class="button-grp">
+                        <button type="button" class="btn sign-in" onclick="registerAccount()">Register Account</button>
+                        <button type="button" class="btn sign-up" onclick="window.location.href='index.html'">Back to Login</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="signup.js"></script>
+</body>
+
+</html>
