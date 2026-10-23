@@ -11,7 +11,7 @@ app.post("/login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  
+
   const user = db.prepare("SELECT * FROM users WHERE username = ?").get(username);
 
   if (!user) {
@@ -79,6 +79,87 @@ app.post("/signup", (req, res) => {
     .run(username, hash, "student", firstName, lastName, email, phone, course, gender, studentId);
 
   res.json({ message: "Account created!" });
+});
+
+/* --- Book a Session (Jabez) --- */
+
+/* GET /api/slots?mentor=...&date=YYYY-MM-DD */
+app.get("/api/slots", (req, res) => {
+  const mentor = req.query.mentor;
+  const date = req.query.date;
+
+  if (!mentor || !date) {
+    return res.status(400).json({ message: "Mentor and date are required." });
+  }
+
+  const slots = db.prepare("SELECT time_slot FROM mentor_availability WHERE mentor = ? ORDER BY id").all(mentor);
+
+  const taken = db.prepare("SELECT time_slot FROM bookings WHERE mentor = ? AND booking_date = ? AND status IN ('Pending', 'Confirmed')")
+    .all(mentor, date)
+    .map(function (row) { return row.time_slot; });
+
+  res.json(slots.map(function (slot) {
+    return {
+      time: slot.time_slot,
+      status: taken.includes(slot.time_slot) ? "Booked" : "Available"
+    };
+  }));
+});
+
+/* POST /api/bookings  (status: "Draft" or "Pending") */
+app.post("/api/bookings", (req, res) => {
+  const student = req.body.student || "student";
+  const course = req.body.course;
+  const mentor = req.body.mentor;
+  const date = req.body.date;
+  const timeSlot = req.body.timeSlot;
+  const concern = req.body.concern || "";
+  const status = req.body.status;
+
+  if (!course || !mentor || !date || !timeSlot) {
+    return res.status(400).json({ message: "Please choose a course, date and time slot." });
+  }
+
+  if (status !== "Draft" && status !== "Pending") {
+    return res.status(400).json({ message: "Invalid booking status." });
+  }
+
+  const validSlot = db.prepare("SELECT id FROM mentor_availability WHERE mentor = ? AND time_slot = ?").get(mentor, timeSlot);
+
+  if (!validSlot) {
+    return res.status(400).json({ message: "That time slot does not exist for this mentor." });
+  }
+
+  /* only a real booking (Pending) needs the slot to be free */
+  if (status === "Pending") {
+    const taken = db.prepare("SELECT id FROM bookings WHERE mentor = ? AND booking_date = ? AND time_slot = ? AND status IN ('Pending', 'Confirmed')")
+      .get(mentor, date, timeSlot);
+
+    if (taken) {
+      return res.status(409).json({ message: "Sorry, that slot was just booked. Please pick another." });
+    }
+  }
+
+  db.prepare("INSERT INTO bookings (student_username, course, mentor, booking_date, time_slot, concern, status) VALUES (?, ?, ?, ?, ?, ?, ?)")
+    .run(student, course, mentor, date, timeSlot, concern, status);
+
+  res.json({
+    message: status === "Draft" ? "Draft saved." : "Booking submitted! Waiting for mentor confirmation."
+  });
+});
+
+/* GET /api/bookings?student=username  (for "My Bookings") */
+app.get("/api/bookings", (req, res) => {
+  const student = req.query.student;
+
+  if (!student) {
+    return res.status(400).json({ message: "Student is required." });
+  }
+
+  const rows = db.prepare("SELECT id, course, booking_date AS date, time_slot AS time, mentor AS instructor, status FROM bookings WHERE student_username = ? ORDER BY booking_date, id")
+    .all(student);
+
+  res.json(rows);
 });
 
 app.listen(3000, () => {
