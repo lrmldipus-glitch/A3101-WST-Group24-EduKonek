@@ -13,6 +13,19 @@ Maria Leorrie Dipus
 # EduKonek URL 
 https://lrmldipus-glitch.github.io/A3101-WST-Group24-EduKonek/index.html
 
+# Prerequisites and Installation
+
+Before running the application, install the required dependencies using the following commands:
+
+1. Install Express:
+   ```bash
+   npm install express
+   ```
+2. Install bcrypt:
+   ```bash
+   npm install bcrypt
+   ```
+
 # Login Credentials:
 
 • Students
