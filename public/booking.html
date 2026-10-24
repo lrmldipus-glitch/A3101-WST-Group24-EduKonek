@@ -22,10 +22,10 @@
 
             <div class="nav-right">
                 <div class="user-badge">
-                    <div class="user-icon">JC</div>
-                    Juan Cruz
+                    <div class="user-icon" id="student-avatar">ST</div>
+                    <span id="student-username">Student</span>
                 </div>
-                <a href="index.html">Log out</a>
+                <a href="index.html" onclick="sessionStorage.removeItem('username'); sessionStorage.removeItem('initials')">Log out</a>
             </div>
         </nav>
 
