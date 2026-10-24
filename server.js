@@ -162,6 +162,50 @@ app.get("/api/bookings", (req, res) => {
   res.json(rows);
 });
 
+// Course Description : course container
+const courses = {
+  CP: {
+
+    description: "This course introduces students to the fundamental concepts of computer programming, including problem-solving, algorithms, variables, data types, control structures, functions, and basic data structures. Students will develop practical programming skills through hands-on exercises and projects, culminating in a simple working software application.",
+    MS1: "Milestone 1: Programming Fundamentals Portfolio (Deadline: October 1, 2026)",
+    MS2: "Milestone 2: Programming Project Proposal and Prototype (Deadline: October 30, 2026)",
+    TA: "Terminal Assessment: Final Programming Project (Deadline: November 27, 2026)" 
+
+  },
+
+  WST: {
+
+    description: "This course introduces the fundamental concepts, tools, and technologies used in developing modern web systems. It covers web architecture, client- and server-side technologies, databases, APIs, responsive design, web security, and deployment. Through hands-on activities and a culminating project, students will design, develop, test, and deploy a functional web-based application.",
+    MS1: "Milestone 1: Web System Design Proposal (Deadline: October 3, 2026)",
+    MS2: "Milestone 2: Functional Web System Prototype (Deadline: October 29, 2026)",
+    TA: "Terminal Assessment: Final Web System and Documentation (Deadline: November 29, 2026)"   
+
+  },
+
+  LWR: {
+
+    description: "This course examines the life, works, writings, and contributions of Jose Rizal to Philippine history and nation-building. It explores Rizal’s major literary works, ideas, travels, relationships, and historical context, with emphasis on how his writings reflected the social and political conditions of his time and contributed to the development of Filipino national consciousness. Students will critically analyze selected works and relate Rizal’s ideas to contemporary Philippine society.",
+    MS1: "Milestone 1: Rizal Life and Historical Context Porfolio (Deadline: October 2, 2026)",
+    MS2: "Milestone 2: Literary and Hisotrical Analysis (Deadline: October 30, 2026)",
+    TA: "Terminal Assessment: Rizal and Contemporary Philippine Society Presentation (Deadline: November 25, 2026)" 
+
+  }
+};
+
+// Course Description: course description selector backend
+app.get('/courses', (req,res) => {
+  const courseName = req.query.name;
+  const course = courses[courseName];
+
+  if(!course){
+    return res.status(404).json({
+      error: "Courses not found"
+    })
+  }
+  res.json(course);
+
+});
+
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");
 });
