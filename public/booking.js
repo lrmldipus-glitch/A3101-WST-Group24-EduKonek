@@ -143,6 +143,11 @@ function submitBooking(status) {
         });
 }
 document.addEventListener("DOMContentLoaded", function () {
+    var username = sessionStorage.getItem("username") || "Student";
+    document.getElementById("student-username").textContent = username;
+    document.getElementById("student-avatar").textContent =
+        sessionStorage.getItem("initials") || username.slice(0, 2).toUpperCase();
+
     var dateInput = document.getElementById("booking-date");
     dateInput.min = todayString();
     dateInput.value = todayString();

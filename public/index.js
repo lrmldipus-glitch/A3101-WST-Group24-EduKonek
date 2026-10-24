@@ -20,6 +20,8 @@ async function checkCredentials() {
     }
 
     alert("Login successful, Welcome!");
+    sessionStorage.setItem("username", username);
+    sessionStorage.setItem("initials", data.initials || username.slice(0, 2).toUpperCase());
 
     if (data.role === "mentor") {
         window.location.href = "teacher.html";

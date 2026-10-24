@@ -48,3 +48,70 @@ async function showCourse(courseName) {
     document.getElementById("output-3").textContent =
         course.TA;
 }
+
+const bookingsTableBody = document.getElementById("bookings-table-body");
+
+function displayStudentUsername() {
+    const username = sessionStorage.getItem("username") || "Student";
+    document.getElementById("student-username").textContent = username;
+    document.getElementById("welcome-username").textContent = username;
+    document.getElementById("student-avatar").textContent =
+        sessionStorage.getItem("initials") || username.slice(0, 2).toUpperCase();
+}
+
+function displayBookingMessage(message) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.colSpan = 5;
+    cell.textContent = message;
+    row.appendChild(cell);
+    bookingsTableBody.replaceChildren(row);
+}
+
+async function loadStudentBookings() {
+    const username = sessionStorage.getItem("username");
+
+    if (!username) {
+        displayBookingMessage("Please sign in to view your bookings.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/bookings?student=${encodeURIComponent(username)}`);
+        const bookings = await response.json();
+
+        if (!response.ok) {
+            throw new Error(bookings.message || "Could not load your bookings.");
+        }
+
+        if (bookings.length === 0) {
+            displayBookingMessage("You don't have any bookings yet.");
+            return;
+        }
+
+        bookingsTableBody.replaceChildren();
+        bookings.forEach((booking) => {
+            const row = document.createElement("tr");
+            const date = new Date(`${booking.date}T00:00:00`);
+            const values = [
+                booking.course,
+                date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }),
+                booking.time,
+                booking.instructor,
+                booking.status
+            ];
+
+            values.forEach((value) => {
+                const cell = document.createElement("td");
+                cell.textContent = value;
+                row.appendChild(cell);
+            });
+            bookingsTableBody.appendChild(row);
+        });
+    } catch (error) {
+        displayBookingMessage(error.message || "Could not load your bookings.");
+    }
+}
+
+displayStudentUsername();
+loadStudentBookings();

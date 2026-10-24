@@ -34,15 +34,15 @@
 -->
             <div class="nav-right">
                 <div class="user-badge">
-                    <div class="user-icon">JC</div>
-                    Juan Cruz
+                    <div class="user-icon" id="student-avatar">ST</div>
+                    <span id="student-username">Student</span>
                 </div>
-                <a href="index.html">Log out</a>
+                <a href="index.html" onclick="sessionStorage.removeItem('username'); sessionStorage.removeItem('initials')">Log out</a>
             </div>
         </nav>
 
         <div class="content">
-            <h2>Welcome back, Juan Cruz !</h2>
+            <h2>Welcome back, <span id="welcome-username">Student</span>!</h2>
             <p>Here is what is coming up this week.</p>
             <br>
             <section>
@@ -73,27 +73,18 @@
             <h2>My Bookings</h2>
             <p>View and manage your confirmed or pending mentoring sessions.</p>
             <table class="sessions-table">
-                <tr>
-                    <th>Course</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Instructor</th>
-                    <th>Status</th>
-                </tr>
-                <tr>
-                    <td>Computer Programming</td>
-                    <td>September 1, 2026</td>
-                    <td>9:00 AM - 9:15 AM</td>
-                    <td>Ms. Susan Abella</td>
-                    <td>Confirmed</td>
-                </tr>
-                <tr>
-                    <td>Computer Programming</td>
-                    <td>September 2, 2026</td>
-                    <td>1:00 PM - 1:15 PM</td>
-                    <td>Ms. Susan Abella</td>
-                    <td>Pending</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Instructor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-table-body">
+                    <tr><td colspan="5">Loading bookings...</td></tr>
+                </tbody>
             </table>
         </section>
 
