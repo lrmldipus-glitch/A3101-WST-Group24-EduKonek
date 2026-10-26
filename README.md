@@ -25,6 +25,21 @@ Before running the application, install the required dependencies using the foll
    ```bash
    npm install bcrypt
    ```
+# Sign Up (as Student)
+
+You may use the following sample information to test the Sign Up feature:
+
+| Field | Sample Information |
+|---|---|
+| First Name | Juan |
+| Last Name | Cruz |
+| Username | Student |
+| Course | BSIT - Information Technology |
+| Password | `12345678` |
+| Student ID | `20261234` |
+| Gender | Male |
+
+**Note:** The sample information above is optional and is provided to align with our prototype's design persona, Juan Cruz, for the Student Portal. You may use this sample information or provide your own details when testing the Sign Up feature.
 
 # Login Credentials:
 
@@ -32,7 +47,7 @@ Before running the application, install the required dependencies using the foll
 
     Username: Student
 
-    Password: 12345
+    Password: 12345678
 
 • Teachers/Mentors
 
