@@ -36,10 +36,12 @@ You may use the following sample information to test the Sign Up feature:
 | Username | Student |
 | Course | BSIT - Information Technology |
 | Password | `12345678` |
-| Student ID | `20261234` |
+| Email Address | juancruz@gmail.com |
+| Phone Number | 09000000000 |
+| Student ID | `2026-1234` |
 | Gender | Male |
 
-**Note:** The sample information above is optional and is provided to align with our prototype's design persona, Juan Cruz, for the Student Portal. You may use this sample information or provide your own details when testing the Sign Up feature.
+**Note:** The sample information is optional and is provided to align with our prototype's design persona, Juan Cruz, for the Student Portal. You may use these sample details or provide your own information when testing the Sign Up feature.
 
 # Login Credentials:
 
