@@ -109,6 +109,11 @@ function submitBooking(status) {
         return;
     }
 
+      if (!concern || concern.trim().length < 20) {
+        alert("Please write at least 20 characters so your mentor understands your concern.");
+        return;
+    }
+
     var body = {
         student: getStudent(),
         course: document.getElementById("course-select").value,
