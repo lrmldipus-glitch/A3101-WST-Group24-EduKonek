@@ -95,3 +95,6 @@ This document outlines the development workflow of EduKonek, including its plann
 This document presents the wireframes of EduKonek, illustrating the planned layout, structure, and user interface of the student and teacher portals. It serves as a visual guide for the application's design and development.
 
 • AI Use Statement (https://docs.google.com/document/d/1PAQkhN8q5vH8eLpN8YVOObW-gmlWw4d1zpbJe8no8SQ/edit?usp=sharing) 
+
+• QA and Testing (https://docs.google.com/spreadsheets/d/1pbox6ZrrTMzvOXIfg_gkAqkPfV5QcKATVAqauUG1LtQ/edit?usp=drive_link)
+This document provides an overview of the EduKonek testing phase, including functional test cases, internal testing results, identified issues, and improvements implemented based on the testing findings.
