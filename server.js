@@ -116,6 +116,10 @@ app.post("/api/bookings", (req, res) => {
   const concern = req.body.concern || "";
   const status = req.body.status;
 
+ if (!concern || concern.trim().length < 20) {
+    return res.status(400).json({ message: "Please write at least 20 characters about your concern." });
+  }
+
   if (!course || !mentor || !date || !timeSlot) {
     return res.status(400).json({ message: "Please choose a course, date and time slot." });
   }
